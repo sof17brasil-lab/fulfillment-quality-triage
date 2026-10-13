@@ -1,0 +1,285 @@
+[
+ [
+  {
+   "seller": "06a2c3af",
+   "seller_state": "MA",
+   "scored_orders": 392,
+   "late_handoffs": 123,
+   "late_handoff_pct": 31.4,
+   "platform_late_handoff_pct": 9.0,
+   "wilson_lower_pct": 27.0,
+   "late_deliveries": 74,
+   "late_delivery_pct": 18.9,
+   "seller_caused_late": 33,
+   "shared_late": 33,
+   "reviewed": 388,
+   "low_review_pct": 16.8
+  }
+ ],
+ [
+  {
+   "month": "2018-01-01",
+   "orders": 9,
+   "late_handoffs": 0,
+   "late_handoff_pct": 0.0
+  },
+  {
+   "month": "2018-02-01",
+   "orders": 11,
+   "late_handoffs": 3,
+   "late_handoff_pct": 27.3
+  },
+  {
+   "month": "2018-03-01",
+   "orders": 41,
+   "late_handoffs": 21,
+   "late_handoff_pct": 51.2
+  },
+  {
+   "month": "2018-04-01",
+   "orders": 36,
+   "late_handoffs": 1,
+   "late_handoff_pct": 2.8
+  },
+  {
+   "month": "2018-05-01",
+   "orders": 70,
+   "late_handoffs": 47,
+   "late_handoff_pct": 67.1
+  },
+  {
+   "month": "2018-06-01",
+   "orders": 86,
+   "late_handoffs": 0,
+   "late_handoff_pct": 0.0
+  },
+  {
+   "month": "2018-07-01",
+   "orders": 73,
+   "late_handoffs": 51,
+   "late_handoff_pct": 69.9
+  },
+  {
+   "month": "2018-08-01",
+   "orders": 66,
+   "late_handoffs": 0,
+   "late_handoff_pct": 0.0
+  }
+ ],
+ [
+  {
+   "period": "Normal weeks",
+   "delivered": 10230,
+   "late": 680,
+   "late_pct": 6.6,
+   "late_handoff_pct": 8.6,
+   "seller_leg_days_p50": 2.1,
+   "carrier_leg_days_p50": 8.0
+  },
+  {
+   "period": "Black Friday 2017",
+   "delivered": 946,
+   "late": 338,
+   "late_pct": 35.7,
+   "late_handoff_pct": 15.8,
+   "seller_leg_days_p50": 3.2,
+   "carrier_leg_days_p50": 15.2
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "delivered": 1129,
+   "late": 477,
+   "late_pct": 42.2,
+   "late_handoff_pct": 9.6,
+   "seller_leg_days_p50": 2.4,
+   "carrier_leg_days_p50": 20.0
+  }
+ ],
+ [
+  {
+   "month": "2017-01-01",
+   "delivered": 91,
+   "late_pct": 3.3,
+   "carrier_leg_days_p50": 8.0
+  },
+  {
+   "month": "2017-02-01",
+   "delivered": 230,
+   "late_pct": 3.5,
+   "carrier_leg_days_p50": 7.0
+  },
+  {
+   "month": "2017-03-01",
+   "delivered": 370,
+   "late_pct": 4.3,
+   "carrier_leg_days_p50": 6.1
+  },
+  {
+   "month": "2017-04-01",
+   "delivered": 325,
+   "late_pct": 6.5,
+   "carrier_leg_days_p50": 8.9
+  },
+  {
+   "month": "2017-05-01",
+   "delivered": 466,
+   "late_pct": 2.8,
+   "carrier_leg_days_p50": 6.9
+  },
+  {
+   "month": "2017-06-01",
+   "delivered": 399,
+   "late_pct": 3.3,
+   "carrier_leg_days_p50": 8.2
+  },
+  {
+   "month": "2017-07-01",
+   "delivered": 547,
+   "late_pct": 3.1,
+   "carrier_leg_days_p50": 7.9
+  },
+  {
+   "month": "2017-08-01",
+   "delivered": 537,
+   "late_pct": 3.0,
+   "carrier_leg_days_p50": 8.1
+  },
+  {
+   "month": "2017-09-01",
+   "delivered": 591,
+   "late_pct": 5.1,
+   "carrier_leg_days_p50": 8.8
+  },
+  {
+   "month": "2017-10-01",
+   "delivered": 654,
+   "late_pct": 6.9,
+   "carrier_leg_days_p50": 8.1
+  },
+  {
+   "month": "2017-11-01",
+   "delivered": 1012,
+   "late_pct": 26.0,
+   "carrier_leg_days_p50": 12.2
+  },
+  {
+   "month": "2017-12-01",
+   "delivered": 746,
+   "late_pct": 24.0,
+   "carrier_leg_days_p50": 15.4
+  },
+  {
+   "month": "2018-01-01",
+   "delivered": 850,
+   "late_pct": 13.1,
+   "carrier_leg_days_p50": 11.9
+  },
+  {
+   "month": "2018-02-01",
+   "delivered": 879,
+   "late_pct": 34.0,
+   "carrier_leg_days_p50": 15.0
+  },
+  {
+   "month": "2018-03-01",
+   "delivered": 864,
+   "late_pct": 34.5,
+   "carrier_leg_days_p50": 18.0
+  },
+  {
+   "month": "2018-04-01",
+   "delivered": 807,
+   "late_pct": 4.8,
+   "carrier_leg_days_p50": 9.0
+  },
+  {
+   "month": "2018-05-01",
+   "delivered": 816,
+   "late_pct": 6.9,
+   "carrier_leg_days_p50": 8.3
+  },
+  {
+   "month": "2018-06-01",
+   "delivered": 707,
+   "late_pct": 1.3,
+   "carrier_leg_days_p50": 6.5
+  },
+  {
+   "month": "2018-07-01",
+   "delivered": 696,
+   "late_pct": 2.4,
+   "carrier_leg_days_p50": 6.0
+  },
+  {
+   "month": "2018-08-01",
+   "delivered": 718,
+   "late_pct": 5.8,
+   "carrier_leg_days_p50": 5.3
+  }
+ ],
+ [
+  {
+   "episode_delivered": 1129,
+   "episode_late": 477,
+   "normal_late_pct": 6.6,
+   "excess_late_orders": 402.0
+  }
+ ],
+ [
+  {
+   "handoff": "On-time handoff",
+   "on_time_deliveries": 82786,
+   "reviewed": 82349,
+   "avg_review": 4.31,
+   "low_reviews": 7333,
+   "low_review_pct": 8.9
+  },
+  {
+   "handoff": "Late handoff",
+   "on_time_deliveries": 6770,
+   "reviewed": 6718,
+   "avg_review": 4.08,
+   "low_reviews": 905,
+   "low_review_pct": 13.5
+  }
+ ],
+ [
+  {
+   "handoff": "On-time handoff",
+   "on_time_deliveries": 260,
+   "reviewed": 259,
+   "avg_review": 4.37,
+   "low_reviews": 19,
+   "low_review_pct": 7.3
+  },
+  {
+   "handoff": "Late handoff",
+   "on_time_deliveries": 55,
+   "reviewed": 55,
+   "avg_review": 4.51,
+   "low_reviews": 2,
+   "low_review_pct": 3.6
+  }
+ ],
+ [
+  {
+   "handoff": "On-time handoff",
+   "on_time_deliveries": 82786,
+   "total_days_p50": 9.3,
+   "days_early_p50": 13.4
+  },
+  {
+   "handoff": "Late handoff",
+   "on_time_deliveries": 6770,
+   "total_days_p50": 15.1,
+   "days_early_p50": 8.5
+  }
+ ],
+ [
+  {
+   "episode_late_pct": 42.2,
+   "normal_late_pct": 6.6,
+   "late_pct_vs_normal": 35.6
+  }
+ ]
+]

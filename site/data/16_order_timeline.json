@@ -1,0 +1,77 @@
+[
+ [
+  {
+   "period": "Normal weeks",
+   "delivered": 81199,
+   "seller_leg_days_p50": 2.1,
+   "carrier_leg_days_p50": 7.0,
+   "total_days_p50": 9.8,
+   "promised_days_p50": 24.3,
+   "days_inside_promise_p50": -14.4
+  },
+  {
+   "period": "Black Friday 2017",
+   "delivered": 6592,
+   "seller_leg_days_p50": 3.1,
+   "carrier_leg_days_p50": 9.8,
+   "total_days_p50": 13.5,
+   "promised_days_p50": 25.0,
+   "days_inside_promise_p50": -11.5
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "delivered": 8296,
+   "seller_leg_days_p50": 2.4,
+   "carrier_leg_days_p50": 11.1,
+   "total_days_p50": 14.4,
+   "promised_days_p50": 23.2,
+   "days_inside_promise_p50": -8.8
+  }
+ ],
+ [
+  {
+   "period": "Normal weeks",
+   "seller_leg_days_p90": 6.3,
+   "carrier_leg_days_p90": 16.7,
+   "total_days_p90": 21.1
+  },
+  {
+   "period": "Black Friday 2017",
+   "seller_leg_days_p90": 7.3,
+   "carrier_leg_days_p90": 25.9,
+   "total_days_p90": 31.3
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "seller_leg_days_p90": 6.3,
+   "carrier_leg_days_p90": 30.0,
+   "total_days_p90": 34.1
+  }
+ ],
+ [
+  {
+   "period": "Black Friday 2017",
+   "seller_leg_vs_normal_days": 1.0,
+   "carrier_leg_vs_normal_days": 2.8
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "seller_leg_vs_normal_days": 0.3,
+   "carrier_leg_vs_normal_days": 4.1
+  }
+ ],
+ [
+  {
+   "period": "Black Friday 2017",
+   "late_pct": 14.7,
+   "normal_late_pct": 4.7,
+   "late_pct_vs_normal": 10.0
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "late_pct": 21.0,
+   "normal_late_pct": 4.7,
+   "late_pct_vs_normal": 16.3
+  }
+ ]
+]

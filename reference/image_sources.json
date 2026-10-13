@@ -1,0 +1,76 @@
+[
+ {
+  "slug": "pepper-red",
+  "subject": "Red bell pepper",
+  "title": "File:Flat red bell pepper 2017 A2.jpg",
+  "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Flat_red_bell_pepper_2017_A2.jpg/960px-Flat_red_bell_pepper_2017_A2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Flat_red_bell_pepper_2017_A2.jpg",
+  "author": "Fructibus",
+  "license": "CC0",
+  "license_terms": "Creative Commons Zero, Public Domain Dedication",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ {
+  "slug": "carrot",
+  "subject": "Carrot",
+  "title": "File:Curved carrot 2017 A.jpg",
+  "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Curved_carrot_2017_A.jpg/960px-Curved_carrot_2017_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Curved_carrot_2017_A.jpg",
+  "author": "Fructibus",
+  "license": "CC0",
+  "license_terms": "Creative Commons Zero, Public Domain Dedication",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "luma_min": 100,
+  "sat_max": 88,
+  "trim_bottom": 26
+ },
+ {
+  "slug": "lemon",
+  "subject": "Lemon",
+  "title": "File:Lemon with white background.jpg",
+  "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Lemon_with_white_background.jpg/960px-Lemon_with_white_background.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Lemon_with_white_background.jpg",
+  "author": "Bordercolliez",
+  "license": "CC0",
+  "license_terms": "Creative Commons Zero, Public Domain Dedication",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "luma_min": 110,
+  "sat_max": 82
+ },
+ {
+  "slug": "apple",
+  "subject": "Red apple",
+  "title": "File:Red apple on white background.jpg",
+  "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Red_apple_on_white_background.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Red_apple_on_white_background.jpg",
+  "author": "Sprinno",
+  "license": "CC0",
+  "license_terms": "Creative Commons Zero, Public Domain Dedication",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ {
+  "slug": "avocado",
+  "subject": "Avocado",
+  "title": "File:Bilobed avocado 2017 A.jpg",
+  "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Bilobed_avocado_2017_A.jpg/960px-Bilobed_avocado_2017_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Bilobed_avocado_2017_A.jpg",
+  "author": "Fructibus",
+  "license": "CC0",
+  "license_terms": "Creative Commons Zero, Public Domain Dedication",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "luma_min": 185,
+  "sat_max": 40
+ },
+ {
+  "slug": "pepper-green",
+  "subject": "Green bell pepper",
+  "title": "File:Green bell pepper 2017 A.jpg",
+  "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Green_bell_pepper_2017_A.jpg/960px-Green_bell_pepper_2017_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Green_bell_pepper_2017_A.jpg",
+  "author": "Fructibus",
+  "license": "CC0",
+  "license_terms": "Creative Commons Zero, Public Domain Dedication",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "luma_min": 135
+ }
+]

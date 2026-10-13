@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &amp; SQL — Fulfillment Quality Triage</title>
+<meta name="description" content="Definitions, validation checks, every query, the limits and the sources behind the Fulfillment Quality Triage case study.">
+<link rel="preload" href="fonts/inter-tight-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=17">
+<link rel="stylesheet" href="css/method.css?v=2">
+</head>
+<body class="doc">
+
+<header class="site-head site-head--solid">
+  <a class="mark" href="index.html" aria-label="Back to the dashboard">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <g stroke="#F5E4C7" stroke-width="1.6" stroke-linecap="round">
+        <path d="M24 42V20"/>
+        <path d="M24 20c0-5 2-9 6-12 2 5 1 10-2 13-1.4 1.4-2.8 2-4 2z"/>
+        <path d="M24 20c0-5-2-9-6-12-2 5-1 10 2 13 1.4 1.4 2.8 2 4 2z"/>
+        <path d="M24 29c0-4.4 2-8 6-10.5 1.6 4.4.6 8.6-2.4 11-1.2 1-2.4 1.4-3.6 1.4z"/>
+        <path d="M24 29c0-4.4-2-8-6-10.5-1.6 4.4-.6 8.6 2.4 11 1.2 1 2.4 1.4 3.6 1.4z"/>
+        <path d="M14 42h20"/>
+      </g>
+    </svg>
+    <span class="mark__txt">Fulfillment<b>Quality Triage</b></span>
+  </a>
+  <nav class="head-actions"><a class="btn btn--label" href="index.html">&larr; Back to the dashboard</a></nav>
+</header>
+
+<main class="doc__wrap">
+  <div class="shell">
+
+    <p class="eyebrow">Method &amp; SQL</p>
+    <h1 class="doc__h1">How every number on this site was produced.</h1>
+    <p class="doc__lead">The dashboard carries no method. It lives here instead, so a reader who wants
+      proof can find it and a reader who doesn&rsquo;t never has to scroll past it.</p>
+
+    <nav class="toc">
+      <a href="#how">How to reproduce it</a>
+      <a href="#defs">Definitions</a>
+      <a href="#checks">Validation checks</a>
+      <a href="#ledger">The ledger</a>
+      <a href="#dropped">Dropped leads</a>
+      <a href="#limits">Limits</a>
+      <a href="#sources">Sources</a>
+      <a href="#ai">Built with AI assistance</a>
+      <a href="#sql">Every query</a>
+    </nav>
+
+    <!-- ===================== reproduce ===================== -->
+    <section id="how" class="doc__sec">
+      <h2>How to reproduce it</h2>
+      <p>Four commands. The last one must end with <code>ALL CHECKS PASSED</code>.</p>
+      <pre class="code"><code>pip install -r requirements.txt
+python scripts/load.py            # CSVs -&gt; build/olist.duckdb, checks row counts
+python scripts/run.py             # runs sql/*.sql in order -&gt; out/*.json
+python scripts/verify_pandas.py   # independent recomputation -&gt; out/pandas_recheck.json
+python scripts/check.py           # must end with ALL CHECKS PASSED</code></pre>
+      <p>The raw CSVs are not in this repository. <code>data/README.md</code> says where to get them.
+         <code>scripts/build_site.py</code> copies the results into <code>site/data/</code>, which is
+         the only thing the page reads.</p>
+    </section>
+
+    <!-- ===================== definitions ===================== -->
+    <section id="defs" class="doc__sec">
+      <h2>Definitions</h2>
+
+      <h3>Outcome: every order lands in exactly one bucket</h3>
+      <dl class="defs">
+        <dt>Delivered on time</dt><dd>Delivered before the end of the promised calendar day.</dd>
+        <dt>Delivered late</dt><dd>Delivered, but after the end of the promised day.</dd>
+        <dt>Cancelled</dt><dd>Status <code>canceled</code> or <code>unavailable</code>.</dd>
+        <dt>Stalled</dt><dd>Paid for and never delivered by the time the data ends.</dd>
+      </dl>
+      <p>The promise is a calendar date, so the deadline is the <em>end</em> of that day. Treating it as
+         midnight at the start would mark a large number of same-day arrivals late.</p>
+
+      <h3>Late cause: a counterfactual, not a guess</h3>
+      <p>For every late order we ask one question: <strong>if the seller had handed the parcel over
+         exactly at the shipping deadline, would it still have been late?</strong></p>
+      <dl class="defs">
+        <dt>Seller handoff</dt><dd>The handoff was late, and the delay was at least as large as the
+          lateness. An on-time handoff alone would have saved it.</dd>
+        <dt>Shared</dt><dd>The handoff was late, but the parcel was so slow in transit that an on-time
+          handoff would not have been enough.</dd>
+        <dt>Carrier or promise</dt><dd>The parcel left on time and still arrived late.</dd>
+        <dt>Unknown</dt><dd>No handoff timestamp. One order in the whole window.</dd>
+      </dl>
+
+      <h3>The monitor: a p-chart, not a trend line</h3>
+      <p>The expected rate for a week is the <em>median</em> of the prior 26 weeks, so one bad month
+         cannot drag the baseline up and hide the next one. The upper control limit is expected plus
+         three standard errors for that week&rsquo;s volume. <strong>SEV1</strong> means more than
+         double that limit &mdash; a deliberately high bar, which is why only 8 of 86 weeks clear it.</p>
+
+      <h3>Seller flagging: Wilson lower bound</h3>
+      <p>A seller with 3 late handoffs out of 10 is not provably worse than the platform. Each seller
+         gets a Wilson 95% lower bound &mdash; the lowest late-handoff rate still plausible given their
+         volume &mdash; and is flagged only when even that bound sits above the platform rate. Ranking
+         on the raw rate would put low-volume sellers at the top by chance.</p>
+
+      <h3>Month-matching, and why 148&nbsp;&divide;&nbsp;39,516 is not the number on the page</h3>
+      <p>Cancellation rates fell across the whole platform over the window, and veteran-seller orders
+         skew later in time, so a raw comparison of new against veteran sellers mostly measures the
+         calendar. The launch scorecard therefore compares new sellers only against veterans
+         <em>in the same calendar month</em>, then combines months weighted by how many new-seller
+         orders each month held.</p>
+      <p>That weighted figure is <strong>0.39%</strong>. The unweighted ratio of the two totals printed
+         beside it is 0.37%. The difference is the weighting, and the weighting is the entire point of
+         the control, so the page labels it a month-matched rate rather than implying a division.
+         The same stratified method is used for the repeat-purchase check in query 08.</p>
+    </section>
+
+    <!-- ===================== checks ===================== -->
+    <section id="checks" class="doc__sec">
+      <h2>Validation checks</h2>
+      <p>These run on every build. <code>scripts/check.py</code> exits non-zero if any fails, so a
+         broken number cannot reach the page.</p>
+      <div class="tablewrap">
+        <table class="table" id="t-checks">
+          <thead><tr><th class="is-text">#</th><th class="is-text">Check</th><th>Expected</th><th>Actual</th><th class="is-text">Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="doc__meta" id="checks-summary"></p>
+    </section>
+
+    <!-- ===================== ledger ===================== -->
+    <section id="ledger" class="doc__sec">
+      <h2>The ledger</h2>
+      <p>Every number shown anywhere on this site has an id here, a claim in plain words, the query it
+         came from, and &mdash; where an independent recomputation exists &mdash; the pandas value it was
+         checked against. <code>scripts/verify_pandas.py</code> recomputes the headline figures straight
+         from the raw CSVs and shares no logic with the SQL, so a bug would have to exist twice, written
+         two different ways, to survive.</p>
+      <p class="doc__meta" id="ledger-summary"></p>
+      <div class="tablewrap tablewrap--tall">
+        <table class="table" id="t-ledger">
+          <thead><tr><th class="is-text">ID</th><th class="is-text">Claim</th><th>Value</th><th class="is-text">Unit</th><th class="is-text">Query</th><th class="is-text">Re-check</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== dropped ===================== -->
+    <section id="dropped" class="doc__sec">
+      <h2>Leads that were tested and dropped</h2>
+
+      <h3>A real-time early warning &mdash; dropped</h3>
+      <p>The late rate for a purchase week is only known about three weeks later, once those orders are
+         due. A count of parcels stuck in transit more than 10 days, taken at each week&rsquo;s end,
+         might fire sooner. It does not. In the week before each episode&rsquo;s first SEV1 the signal
+         sat inside its own normal range &mdash; 35.1% before Black Friday and 41.5% before
+         February&ndash;March, both &ldquo;ok&rdquo;. It gave no usable lead time, so it is not shown as
+         a fix. <code>sql/12_early_warning.sql</code> keeps the test.</p>
+
+      <h3>New sellers cancel more &mdash; survived, and moved to the page</h3>
+      <p>The first look showed new sellers cancelling far more than veterans, which looked like a
+         straightforward launch-quality problem. It was partly the calendar. Tested within matched
+         months the gap narrows but holds, so it earned a place on the main page with its counts shown.</p>
+
+      <h3>Complaint themes &mdash; not attempted</h3>
+      <p>10,721 of the low-star reviews carry written text in Portuguese. Sorting them into defect
+         reasons would need a hand-labelled sample to measure accuracy, and that work has not been
+         done, so no claim is made about what customers wrote.</p>
+    </section>
+
+    <!-- ===================== limits ===================== -->
+    <section id="limits" class="doc__sec">
+      <h2>Limits</h2>
+      <ol class="limits">
+        <li>This is multi-day parcel shipping, not same-day grocery. The methods transfer. The
+            timescales and the specific numbers do not.</li>
+        <li>There are no reschedule events and no shopper-supply data, so two of the defect types a
+            fulfilment quality team tracks cannot be shown at all.</li>
+        <li>Fault attribution uses timestamps. A seller who hands off late because the carrier missed a
+            pickup is blamed unfairly. With real operations data you would check pickup scans.</li>
+        <li>The data ends in 2018 and covers one marketplace in one country.</li>
+        <li>The repeat-purchase result is observational and small &mdash; 35 and 41 repeat customers.
+            It suggests a direction. A company with frequent reorders could measure it properly in a day.</li>
+        <li>The monitor looks back at purchase weeks. A live version would need an early-warning
+            signal, and the one tested here did not work.</li>
+        <li>No Instacart internal number, cost, defect rate, team or tool appears anywhere in this
+            project. None are public. The calculator uses the reader&rsquo;s own inputs.</li>
+      </ol>
+    </section>
+
+    <!-- ===================== sources ===================== -->
+    <section id="sources" class="doc__sec">
+      <h2>Outside facts</h2>
+      <p>Only facts that have been opened, checked word for word and ticked in
+         <code>sources/SOURCES.md</code> are allowed on the site. The build script enforces it: if a
+         quoted fact is not ticked, the build fails rather than publishing it.</p>
+      <div class="tablewrap">
+        <table class="table" id="t-sources">
+          <thead><tr><th class="is-text">ID</th><th class="is-text">Fact</th><th class="is-text">Exact words</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="doc__meta" id="sources-summary"></p>
+      <p>The dataset is the <b>Brazilian E-Commerce Public Dataset by Olist</b> on Kaggle, licensed
+         <b>CC BY-NC-SA 4.0</b> &mdash; confirmed from Kaggle&rsquo;s own API record for the dataset.
+         Photographs are CC0; see <code>design/image_credits.md</code>.</p>
+    </section>
+
+    <!-- ===================== ai ===================== -->
+    <section id="ai" class="doc__sec">
+      <h2>Built with AI assistance</h2>
+      <p>Sofia Mota built this project with Claude, an AI assistant. Every headline number is computed
+         twice, in SQL and again in separate Python code, and every quote is checked against its
+         original source.</p>
+    </section>
+
+    <!-- ===================== sql ===================== -->
+    <section id="sql" class="doc__sec">
+      <h2>Every query</h2>
+      <p>In the order they run. Each opens with the question it answers in plain words.</p>
+      <div id="sql-list" class="sqlist"></div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="shell foot__grid">
+    <p><b>Brazilian E-Commerce Public Dataset by Olist</b>, via Kaggle, licensed CC BY-NC-SA 4.0.
+       Multi-day parcel shipping in Brazil, 2017&ndash;2018.</p>
+    <p>Independent portfolio project. Not affiliated with Instacart.
+       <a href="index.html">Back to the dashboard</a></p>
+  </div>
+</footer>
+
+<script src="js/method.js?v=2"></script>
+</body>
+</html>

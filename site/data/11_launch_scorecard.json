@@ -1,0 +1,346 @@
+[
+ [
+  {
+   "tenure_bucket": "First 30 days",
+   "orders": 8589,
+   "cancelled": 83,
+   "cancel_pct": 0.97
+  },
+  {
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 11831,
+   "cancelled": 54,
+   "cancel_pct": 0.46
+  },
+  {
+   "tenure_bucket": "After day 90",
+   "orders": 39517,
+   "cancelled": 148,
+   "cancel_pct": 0.37
+  }
+ ],
+ [
+  {
+   "purchase_month": "2017-03-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 1,
+   "cancel_pct": 0.0
+  },
+  {
+   "purchase_month": "2017-03-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 377,
+   "cancel_pct": 2.12
+  },
+  {
+   "purchase_month": "2017-04-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 182,
+   "cancel_pct": 0.55
+  },
+  {
+   "purchase_month": "2017-04-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 303,
+   "cancel_pct": 0.99
+  },
+  {
+   "purchase_month": "2017-05-01",
+   "tenure_bucket": "After day 90",
+   "orders": 1,
+   "cancel_pct": 0.0
+  },
+  {
+   "purchase_month": "2017-05-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 643,
+   "cancel_pct": 0.78
+  },
+  {
+   "purchase_month": "2017-05-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 443,
+   "cancel_pct": 1.13
+  },
+  {
+   "purchase_month": "2017-06-01",
+   "tenure_bucket": "After day 90",
+   "orders": 286,
+   "cancel_pct": 0.0
+  },
+  {
+   "purchase_month": "2017-06-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 599,
+   "cancel_pct": 0.83
+  },
+  {
+   "purchase_month": "2017-06-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 214,
+   "cancel_pct": 1.4
+  },
+  {
+   "purchase_month": "2017-07-01",
+   "tenure_bucket": "After day 90",
+   "orders": 717,
+   "cancel_pct": 0.84
+  },
+  {
+   "purchase_month": "2017-07-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 569,
+   "cancel_pct": 0.88
+  },
+  {
+   "purchase_month": "2017-07-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 319,
+   "cancel_pct": 0.31
+  },
+  {
+   "purchase_month": "2017-08-01",
+   "tenure_bucket": "After day 90",
+   "orders": 1175,
+   "cancel_pct": 0.43
+  },
+  {
+   "purchase_month": "2017-08-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 451,
+   "cancel_pct": 1.11
+  },
+  {
+   "purchase_month": "2017-08-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 458,
+   "cancel_pct": 0.66
+  },
+  {
+   "purchase_month": "2017-09-01",
+   "tenure_bucket": "After day 90",
+   "orders": 1323,
+   "cancel_pct": 0.6
+  },
+  {
+   "purchase_month": "2017-09-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 569,
+   "cancel_pct": 0.35
+  },
+  {
+   "purchase_month": "2017-09-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 406,
+   "cancel_pct": 0.49
+  },
+  {
+   "purchase_month": "2017-10-01",
+   "tenure_bucket": "After day 90",
+   "orders": 1514,
+   "cancel_pct": 0.4
+  },
+  {
+   "purchase_month": "2017-10-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 592,
+   "cancel_pct": 0.84
+  },
+  {
+   "purchase_month": "2017-10-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 436,
+   "cancel_pct": 0.69
+  },
+  {
+   "purchase_month": "2017-11-01",
+   "tenure_bucket": "After day 90",
+   "orders": 2931,
+   "cancel_pct": 0.38
+  },
+  {
+   "purchase_month": "2017-11-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 1018,
+   "cancel_pct": 0.39
+  },
+  {
+   "purchase_month": "2017-11-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 633,
+   "cancel_pct": 0.47
+  },
+  {
+   "purchase_month": "2017-12-01",
+   "tenure_bucket": "After day 90",
+   "orders": 2412,
+   "cancel_pct": 0.08
+  },
+  {
+   "purchase_month": "2017-12-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 730,
+   "cancel_pct": 0.0
+  },
+  {
+   "purchase_month": "2017-12-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 371,
+   "cancel_pct": 0.54
+  },
+  {
+   "purchase_month": "2018-01-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3436,
+   "cancel_pct": 0.23
+  },
+  {
+   "purchase_month": "2018-01-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 991,
+   "cancel_pct": 0.71
+  },
+  {
+   "purchase_month": "2018-01-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 525,
+   "cancel_pct": 0.95
+  },
+  {
+   "purchase_month": "2018-02-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3428,
+   "cancel_pct": 1.05
+  },
+  {
+   "purchase_month": "2018-02-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 705,
+   "cancel_pct": 0.43
+  },
+  {
+   "purchase_month": "2018-02-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 536,
+   "cancel_pct": 1.87
+  },
+  {
+   "purchase_month": "2018-03-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3907,
+   "cancel_pct": 0.18
+  },
+  {
+   "purchase_month": "2018-03-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 730,
+   "cancel_pct": 0.41
+  },
+  {
+   "purchase_month": "2018-03-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 388,
+   "cancel_pct": 0.77
+  },
+  {
+   "purchase_month": "2018-04-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3815,
+   "cancel_pct": 0.1
+  },
+  {
+   "purchase_month": "2018-04-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 749,
+   "cancel_pct": 0.27
+  },
+  {
+   "purchase_month": "2018-04-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 660,
+   "cancel_pct": 0.91
+  },
+  {
+   "purchase_month": "2018-05-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3860,
+   "cancel_pct": 0.23
+  },
+  {
+   "purchase_month": "2018-05-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 872,
+   "cancel_pct": 0.11
+  },
+  {
+   "purchase_month": "2018-05-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 696,
+   "cancel_pct": 0.57
+  },
+  {
+   "purchase_month": "2018-06-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3475,
+   "cancel_pct": 0.32
+  },
+  {
+   "purchase_month": "2018-06-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 819,
+   "cancel_pct": 0.0
+  },
+  {
+   "purchase_month": "2018-06-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 563,
+   "cancel_pct": 0.18
+  },
+  {
+   "purchase_month": "2018-07-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3524,
+   "cancel_pct": 0.65
+  },
+  {
+   "purchase_month": "2018-07-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 831,
+   "cancel_pct": 0.6
+  },
+  {
+   "purchase_month": "2018-07-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 569,
+   "cancel_pct": 1.41
+  },
+  {
+   "purchase_month": "2018-08-01",
+   "tenure_bucket": "After day 90",
+   "orders": 3713,
+   "cancel_pct": 0.32
+  },
+  {
+   "purchase_month": "2018-08-01",
+   "tenure_bucket": "Days 31 to 90",
+   "orders": 780,
+   "cancel_pct": 0.13
+  },
+  {
+   "purchase_month": "2018-08-01",
+   "tenure_bucket": "First 30 days",
+   "orders": 692,
+   "cancel_pct": 1.88
+  }
+ ],
+ [
+  {
+   "new_seller_orders": 7466,
+   "new_seller_cancelled": 67,
+   "new_seller_cancel_pct": 0.9,
+   "veteran_orders_in_matched_months": 39516,
+   "veteran_cancelled_in_matched_months": 148,
+   "veteran_matched_cancel_pct": 0.39
+  }
+ ]
+]

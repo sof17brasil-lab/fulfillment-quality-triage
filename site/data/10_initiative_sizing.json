@@ -1,0 +1,139 @@
+[
+ [
+  {
+   "initiative": "Seller handoff program",
+   "late_orders_avoided": 231.0,
+   "low_reviews_avoided": 127.0
+  }
+ ],
+ [
+  {
+   "initiative": "Episode response (temporary longer promise)",
+   "part": "Black Friday 2017 (planned ahead, counted in full)",
+   "late_orders_avoided": 505,
+   "late_orders_avoided_3d_cap": 269,
+   "low_reviews_avoided": 255
+  },
+  {
+   "initiative": "Episode response (temporary longer promise)",
+   "part": "Feb-Mar 2018 (orders purchased after the real detection delay)",
+   "late_orders_avoided": 277,
+   "late_orders_avoided_3d_cap": 125,
+   "low_reviews_avoided": 152
+  },
+  {
+   "initiative": "Episode response (temporary longer promise)",
+   "part": "Total (both parts)",
+   "late_orders_avoided": 782,
+   "late_orders_avoided_3d_cap": 394,
+   "low_reviews_avoided": 407
+  }
+ ],
+ [
+  {
+   "initiative": "Lane-level promise (top 5 late-rate states, picked beforehand)",
+   "part": "Black Friday 2017 (states picked from data before 20 Nov 2017, counted in full)",
+   "late_orders_avoided": 73,
+   "late_orders_avoided_3d_cap": 36,
+   "low_reviews_avoided": 35
+  },
+  {
+   "initiative": "Lane-level promise (top 5 late-rate states, picked beforehand)",
+   "part": "Feb-Mar 2018 (states picked from data before 12 Feb 2018; orders after the real detection delay)",
+   "late_orders_avoided": 69,
+   "late_orders_avoided_3d_cap": 24,
+   "low_reviews_avoided": 41
+  },
+  {
+   "initiative": "Lane-level promise (top 5 late-rate states, picked beforehand)",
+   "part": "Total (both parts)",
+   "late_orders_avoided": 142,
+   "late_orders_avoided_3d_cap": 60,
+   "low_reviews_avoided": 76
+  }
+ ],
+ [
+  {
+   "used_for": "Before Black Friday 2017 (used for that episode)",
+   "customer_state": "BA",
+   "delivered": 1192,
+   "late_pct": 8.3
+  },
+  {
+   "used_for": "Before Black Friday 2017 (used for that episode)",
+   "customer_state": "PE",
+   "delivered": 570,
+   "late_pct": 8.2
+  },
+  {
+   "used_for": "Before Black Friday 2017 (used for that episode)",
+   "customer_state": "CE",
+   "delivered": 508,
+   "late_pct": 5.9
+  },
+  {
+   "used_for": "Before Black Friday 2017 (used for that episode)",
+   "customer_state": "SC",
+   "delivered": 1294,
+   "late_pct": 5.9
+  },
+  {
+   "used_for": "Before Black Friday 2017 (used for that episode)",
+   "customer_state": "PA",
+   "delivered": 395,
+   "late_pct": 4.8
+  }
+ ],
+ [
+  {
+   "used_for": "Before Feb-Mar 2018 (used for that episode)",
+   "customer_state": "MA",
+   "delivered": 444,
+   "late_pct": 14.0
+  },
+  {
+   "used_for": "Before Feb-Mar 2018 (used for that episode)",
+   "customer_state": "RJ",
+   "delivered": 7106,
+   "late_pct": 11.0
+  },
+  {
+   "used_for": "Before Feb-Mar 2018 (used for that episode)",
+   "customer_state": "CE",
+   "delivered": 747,
+   "late_pct": 9.9
+  },
+  {
+   "used_for": "Before Feb-Mar 2018 (used for that episode)",
+   "customer_state": "BA",
+   "delivered": 1825,
+   "late_pct": 9.5
+  },
+  {
+   "used_for": "Before Feb-Mar 2018 (used for that episode)",
+   "customer_state": "PE",
+   "delivered": 886,
+   "late_pct": 8.7
+  }
+ ],
+ [
+  {
+   "initiative": "Episode response (temporary longer promise)",
+   "late_orders_avoided": 782.0,
+   "low_reviews_avoided": 407.0,
+   "rank_by_late_orders_avoided": 1
+  },
+  {
+   "initiative": "Seller handoff program",
+   "late_orders_avoided": 231.0,
+   "low_reviews_avoided": 127.0,
+   "rank_by_late_orders_avoided": 2
+  },
+  {
+   "initiative": "Lane-level promise (top 5 late-rate states, picked beforehand)",
+   "late_orders_avoided": 142.0,
+   "low_reviews_avoided": 76.0,
+   "rank_by_late_orders_avoided": 3
+  }
+ ]
+]

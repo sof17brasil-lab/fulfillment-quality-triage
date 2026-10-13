@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fulfillment Quality Triage — Sofia Mota</title>
+<meta name="description" content="Finding whose problem a late delivery is, how big it is, and what fixing it is worth — on 98,962 real marketplace orders.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fulfillment Quality Triage — Sofia Mota">
+<meta property="og:description" content="Most late deliveries weren't the seller's fault. Finding whose problem a late delivery is, how big it is, and what fixing it is worth — on 98,962 real marketplace orders.">
+<meta property="og:image" content="img/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fulfillment Quality Triage — Sofia Mota">
+<meta name="twitter:description" content="Most late deliveries weren't the seller's fault. A fulfillment-quality case study on 98,962 real marketplace orders.">
+<meta name="twitter:image" content="img/social-card.png">
+<link rel="preload" href="fonts/inter-tight-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fjalla-one-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=17">
+</head>
+<body>
+
+<header class="site-head">
+  <a class="mark" href="#top" aria-label="Fulfillment Quality Triage — top">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <g stroke="#F5E4C7" stroke-width="1.6" stroke-linecap="round">
+        <path d="M24 42V20"/>
+        <path d="M24 20c0-5 2-9 6-12 2 5 1 10-2 13-1.4 1.4-2.8 2-4 2z"/>
+        <path d="M24 20c0-5-2-9-6-12-2 5-1 10 2 13 1.4 1.4 2.8 2 4 2z"/>
+        <path d="M24 29c0-4.4 2-8 6-10.5 1.6 4.4.6 8.6-2.4 11-1.2 1-2.4 1.4-3.6 1.4z"/>
+        <path d="M24 29c0-4.4-2-8-6-10.5-1.6 4.4-.6 8.6 2.4 11 1.2 1 2.4 1.4 3.6 1.4z"/>
+        <path d="M14 42h20"/>
+      </g>
+    </svg>
+    <span class="mark__txt">Fulfillment<b>Quality Triage</b></span>
+  </a>
+  <nav class="head-actions">
+    <a class="btn btn--label" href="method.html">Method &amp; SQL</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ======================= 1. HERO ======================= -->
+<section class="hero" id="top">
+  <!-- Sofia's own halved produce. Each slot handles the entrance; the image
+       inside it turns slowly and independently, so the two never fight over
+       the same transform. All five stay clear of the centre text column. -->
+  <div class="produce" aria-hidden="true">
+    <span class="produce__slot" style="--x:-2%; --y:57%; --w:13rem; --o:.9;  --d:120ms">
+      <img src="img/half-tomato.webp"  alt="" style="--spin:38s">
+    </span>
+    <span class="produce__slot" style="--x:84%; --y:45%; --w:13rem; --o:.9;  --d:240ms">
+      <img src="img/half-papaya.webp"  alt="" style="--spin:52s">
+    </span>
+    <span class="produce__slot" style="--x:85%; --y:9%;  --w:8rem;  --o:.72; --d:360ms">
+      <img src="img/half-lemon.webp"   alt="" style="--spin:33s">
+    </span>
+    <span class="produce__slot" style="--x:1%;  --y:19%; --w:8rem;  --o:.7;  --d:480ms">
+      <img src="img/half-avocado.webp" alt="" style="--spin:44s">
+    </span>
+    <span class="produce__slot" style="--x:74%; --y:79%; --w:10rem; --o:.8;  --d:600ms">
+      <img src="img/half-onion.webp"   alt="" style="--spin:47s">
+    </span>
+  </div>
+
+  <div class="hero__inner">
+    <h1 class="hero__h1" data-words>
+      Most late deliveries <em>weren&rsquo;t the seller&rsquo;s fault.</em>
+      <svg class="splat" viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M23.4 5.1c2.6-1.1 4.1 1.9 3.4 4.6-.5 2 .3 2.7 2 2.1 2.4-.9 5.6-1.7 6.6.3 1 2-1.6 3.6-3.8 4.6-1.8.8-1.9 1.8-.2 2.6 2.6 1.2 6.1 2.7 5.2 5-.9 2.2-4.4 1.2-6.9.3-1.9-.7-2.7.1-2 1.9.9 2.4 1.9 5.9-.4 6.7-2.2.8-3.6-2.2-4.4-4.6-.6-1.8-1.6-1.9-2.5-.3-1.3 2.3-3.3 5.2-5.3 4-2-1.2-.9-4.3.2-6.5.9-1.7.3-2.6-1.5-2.2-2.6.6-6.3 1.1-6.8-1.1-.5-2.2 2.9-3.2 5.4-3.6 1.9-.3 2.2-1.3.7-2.4-2.1-1.6-4.8-4-3.3-5.7 1.5-1.7 4.1.3 6 1.9 1.4 1.2 2.4.8 2.3-1-.2-2.7-.1-6.2 2-6.7 1.1-.3 2 .5 2.6 1.6z" fill="#DA1F27"/>
+        <circle cx="38.6" cy="8.2" r="2.3" fill="#DA1F27"/>
+        <circle cx="6.1" cy="35.4" r="1.7" fill="#DA1F27"/>
+        <circle cx="35.9" cy="36.4" r="1.3" fill="#DA1F27"/>
+      </svg>
+      Chasing slow sellers would have missed the worst of it.
+    </h1>
+    <p class="hero__sub">
+      <b data-ledger="N18">&nbsp;</b> of late orders had already left the seller on time,
+      across <b data-ledger="N01">&nbsp;</b> orders of real marketplace data.
+    </p>
+    <figure class="hero__quote">
+      <p><q>one of the most important drivers of repeat customer behavior</q>
+         &mdash; how Instacart describes order quality.</p>
+      <cite>Chris Rogers, CEO &middot; Q2 2026 prepared remarks</cite>
+    </figure>
+  </div>
+
+  <div class="hero__foot">
+    <p class="byline">A portfolio case study by<b>Sofia Mota</b></p>
+    <div class="scroll-cue"><span class="scroll-cue__rail"></span><span>Scroll</span></div>
+  </div>
+</section>
+
+
+<!-- ======================= 2. THE PROBLEM ======================= -->
+<section class="band" id="problem">
+  <div class="shell">
+    <p class="eyebrow">01 &middot; The problem</p>
+    <h2 class="band__h">Most orders are fine. The failures are concentrated.</h2>
+
+    <ul class="kpis rise">
+      <li><span class="kpi__v" data-ledger="N01" data-count>&nbsp;</span><span class="kpi__l">Orders analysed</span></li>
+      <li><span class="kpi__v" data-ledger="N06" data-count>&nbsp;</span><span class="kpi__l">Arrived on time</span></li>
+      <li><span class="kpi__v" data-ledger="N07" data-count>&nbsp;</span><span class="kpi__l">Late, of delivered</span></li>
+      <li><span class="kpi__v" data-ledger="N09" data-count>&nbsp;</span><span class="kpi__l">1&ndash;2&#9733; when late<em>vs <b data-ledger="N10">&nbsp;</b> on time</em></span></li>
+      <li><span class="kpi__v" data-ledger="N20" data-count>&nbsp;</span><span class="kpi__l">Unusual weeks<em>of 86</em></span></li>
+    </ul>
+
+    <div class="grid grid--2">
+      <figure class="card rise">
+        <div class="tag">Where 100 orders end up</div>
+        <div class="card__body">
+          <div class="waffle" id="waffle" role="img"
+               aria-label="Waffle chart: of every 100 orders, about 90 arrive on time, 7 late, 2 stall and 1 is cancelled."></div>
+          <ul class="legend" id="waffle-legend"></ul>
+          <p class="note">Each square is one order in a hundred. Three defects in every hundred,
+             plus seven that arrive late.</p>
+        </div>
+      </figure>
+
+      <figure class="card rise">
+        <div class="tag">Cancellations halved over the window</div>
+        <div class="card__body">
+          <div class="chart chart--sm"><canvas id="c-cancel" role="img" aria-label="Line chart: monthly cancellation rate falling across the window, from 1.53% in the first half to 0.83% in the second."></canvas></div>
+          <p class="note"><b data-ledger="N90">&nbsp;</b> of orders in the first half of the window were
+             cancelled, against <b data-ledger="N91">&nbsp;</b> in the second. Any comparison across
+             seller tenure has to control for that trend.</p>
+        </div>
+      </figure>
+    </div>
+
+    <div class="scale rise">
+      <p class="scale__h">For scale &mdash; Instacart, publicly reported, Q2 2026</p>
+      <ul class="scale__list" id="public-facts"></ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================= 3. THE FINDINGS (stacking) ======================= -->
+<section class="band" id="findings">
+  <div class="shell">
+    <p class="eyebrow">02 &middot; The findings</p>
+    <h2 class="band__h">Same symptom, two different causes.</h2>
+    <p class="band__sub">Five findings, in the order the investigation actually ran.</p>
+
+    <!-- Every change value below is its own ledger number (N133-N135, N105,
+         N51), computed in SQL and re-checked in pandas. Nothing here is
+         arithmetic done in the browser. -->
+    <ul class="stats rise">
+      <li class="stat" data-dir="up" data-tone="bad">
+        <span class="stat__top"><span class="stat__v" data-ledger="N24" data-count>&nbsp;</span></span>
+        <span class="stat__l">Late rate, Feb&ndash;Mar 2018</span>
+        <span class="stat__c">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M12 4H6M12 4v6"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <b data-ledger="N134" data-signed>&nbsp;</b><em>vs normal weeks</em>
+        </span>
+      </li>
+      <li class="stat" data-dir="up" data-tone="bad">
+        <span class="stat__top"><span class="stat__v" data-ledger="N32" data-count>&nbsp;</span></span>
+        <span class="stat__l">Late rate, Rio de Janeiro</span>
+        <span class="stat__c">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M12 4H6M12 4v6"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <b data-ledger="N135" data-signed>&nbsp;</b><em>vs Rio&rsquo;s own normal rate</em>
+        </span>
+      </li>
+      <li class="stat" data-dir="up" data-tone="bad">
+        <span class="stat__top"><span class="stat__v" data-ledger="N100" data-count>&nbsp;</span><span class="stat__u">days</span></span>
+        <span class="stat__l">Carrier leg, Feb&ndash;Mar 2018</span>
+        <span class="stat__c">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M12 4H6M12 4v6"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <b data-ledger="N105" data-signed>&nbsp;</b><em>days vs normal weeks</em>
+        </span>
+      </li>
+      <li class="stat" data-dir="down" data-tone="bad">
+        <span class="stat__top"><span class="stat__v" data-ledger="N49" data-count>&nbsp;</span></span>
+        <span class="stat__l">Came back within 180 days, after a late first order</span>
+        <span class="stat__c">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 12V6M12 12H6"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <b data-ledger="N51" data-signed>&nbsp;</b><em>relative, vs on-time first order</em>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Each card sticks a little lower than the one before, so the stack
+       builds up and you can still see the edge of what is underneath. Pure
+       CSS position:sticky -- no scroll library, no pinning, native scroll. -->
+  <div class="stack">
+    <article class="stack__item" style="--i:0">
+      <figure class="card">
+        <div class="tag">01 &middot; Eight weeks out of 86 were genuinely unusual</div>
+        <div class="card__body">
+          <div class="chart chart--tall"><canvas id="c-monitor" role="img" aria-label="Control chart: weekly late-delivery rate against its expected range. Eight weeks break the upper control limit, in two episodes — Black Friday 2017 and February to March 2018."></canvas></div>
+          <p class="note">A control chart, not a trend line: the band is what the prior 26 weeks predict.
+             Eight weeks broke it, in two episodes, and they hold <b data-ledger="N36">&nbsp;</b> of
+             every late order.</p>
+        </div>
+      </figure>
+    </article>
+
+    <article class="stack__item" style="--i:1">
+      <figure class="card">
+        <div class="tag">02 &middot; Where the days actually go</div>
+        <div class="card__body">
+          <div class="chart"><canvas id="c-timeline" role="img" aria-label="Grouped bar chart: median days from purchase to carrier handoff and from handoff to delivery. Normal weeks 2.1 and 7.0 days; Black Friday 3.1 and 9.8; February to March 2.4 and 11.1."></canvas></div>
+          <p class="note">Black Friday stretched both legs &mdash; the seller leg by
+             <b data-ledger="N102">&nbsp;</b> days, the carrier leg by <b data-ledger="N103">&nbsp;</b>.
+             February&ndash;March barely touched the seller leg (<b data-ledger="N104">&nbsp;</b> days)
+             and added <b data-ledger="N105">&nbsp;</b> to the carrier leg.</p>
+        </div>
+      </figure>
+    </article>
+
+    <article class="stack__item" style="--i:2">
+      <figure class="card">
+        <div class="tag">03 &middot; Who caused the late orders</div>
+        <div class="card__body">
+          <div class="chart"><canvas id="c-cause" role="img" aria-label="Stacked bar chart: cause of late orders by period. Across the window 72.3% of late orders had already left the seller on time, rising to 85.6% in February to March 2018."></canvas></div>
+          <p class="note">Across the whole window <b data-ledger="N18">&nbsp;</b> of late orders had
+             already left the seller on time. In February&ndash;March that rose to
+             <b data-ledger="N26">&nbsp;</b>.</p>
+        </div>
+      </figure>
+    </article>
+
+    <article class="stack__item" style="--i:3">
+      <figure class="card">
+        <div class="tag">04 &middot; Where it landed</div>
+        <div class="card__body">
+          <div class="chart"><canvas id="c-state" role="img" aria-label="Bar chart: late-delivery rate by destination state, normal weeks against the episode. Rio de Janeiro rises from 6.6% to 42.2%."></canvas></div>
+          <p class="note">Rio de Janeiro went from <b data-ledger="N31">&nbsp;</b> late to
+             <b data-ledger="N32">&nbsp;</b>. It carried <b data-ledger="N35">&nbsp;</b> of volume
+             but <b data-ledger="N34">&nbsp;</b> of the excess.</p>
+        </div>
+      </figure>
+    </article>
+
+    <article class="stack__item" style="--i:4">
+      <figure class="card">
+        <div class="tag">05 &middot; Three days late is the breaking point</div>
+        <div class="card__body">
+          <div class="chart"><canvas id="c-cliff" role="img" aria-label="Bar chart: share of one and two star reviews by how late the order was. 32.1% at one to three days late, rising to 67.7% at four to seven days."></canvas></div>
+          <p class="note">The damage is not gradual. It roughly doubles between
+             <b data-ledger="N14">&nbsp;</b> at 1&ndash;3 days late and
+             <b data-ledger="N13">&nbsp;</b> at 4&ndash;7.</p>
+        </div>
+      </figure>
+    </article>
+  </div>
+</section>
+
+
+<!-- ======================= 4. WHY IT MATTERS ======================= -->
+<section class="band" id="impact">
+  <div class="shell">
+    <p class="eyebrow">03 &middot; Why it matters</p>
+    <h2 class="band__h">A late first order costs the next one.</h2>
+
+    <figure class="card rise">
+      <div class="tag">Customers whose first order was late</div>
+      <div class="card__body">
+        <div class="chart"><canvas id="c-repeat" role="img" aria-label="Bar chart: repeat-purchase rate within 90 and 180 days, on-time against late first order. 1.87% against 1.34% at 180 days, on 35 and 41 repeat customers."></canvas></div>
+        <p class="note">A consistent signal, on a small base &mdash; the late groups hold
+           <b data-ledger="N50">&nbsp;</b> and <b data-ledger="N55">&nbsp;</b> repeat customers.
+           Read it as suggestive, not as a measured effect size.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+
+<!-- ======================= 6. TWO ESCALATIONS ======================= -->
+<section class="band" id="escalation">
+  <div class="shell">
+    <p class="eyebrow">04 &middot; Worked escalations</p>
+    <h2 class="band__h">Two escalations, two different answers.</h2>
+    <p class="band__sub">The same dashboard flags both. Only one of them is a seller problem.</p>
+
+    <div class="grid grid--2">
+
+      <!-- (a) the seller -->
+      <article class="case rise">
+        <div class="tag tag--amber">Case A &middot; Seller <span data-json="esc.seller">&nbsp;</span>,
+          <span data-json="esc.state">&nbsp;</span></div>
+        <div class="case__body">
+          <dl class="beats">
+            <dt>What happened</dt>
+            <dd>Hands parcels to the carrier late on <b data-ledger="N110">&nbsp;</b> of
+                <b data-ledger="N108">&nbsp;</b> scored orders, against a platform rate of
+                <b data-ledger="N08">&nbsp;</b>.</dd>
+
+            <dt>Whose fault</dt>
+            <dd>Theirs, and it is real: the flag survives a Wilson lower bound, so this is not
+                a small-sample accident.</dd>
+
+            <dt>What it cost</dt>
+            <dd>Less than you would guess. Those late handoffs caused
+                <b data-ledger="N112">&nbsp;</b> late deliveries &mdash; out of
+                <b data-ledger="N03">&nbsp;</b> on the platform. <strong>This is not the lever
+                for lateness.</strong></dd>
+
+            <dt>Why it still matters</dt>
+            <dd>Platform-wide, a late handoff is linked to about <b>50% more</b> 1&ndash;2&#9733;
+                reviews <em>even when the order still arrives within the promise</em>
+                (<b data-ledger="N122">&nbsp;</b> against <b data-ledger="N121">&nbsp;</b>).
+                Probably because it still arrives later: <b data-ledger="N130">&nbsp;</b> days to
+                the door against <b data-ledger="N129">&nbsp;</b>.</dd>
+
+            <dt>Recommended action</dt>
+            <dd>An account-manager conversation and a handoff-deadline target. Treat it as a
+                controllable quality defect, not as a fix for the late rate.</dd>
+          </dl>
+          <div class="chart chart--sm"><canvas id="c-esc-seller" role="img" aria-label="Line chart: the escalation seller’s monthly late-handoff rate, persistently above the platform rate of 9.0%."></canvas></div>
+          <p class="note">Measured on <b data-ledger="N124">&nbsp;</b> on-time deliveries that
+             followed a late handoff. This seller&rsquo;s own on-time sample is far too small to
+             test (<b data-ledger="N127">&nbsp;</b> orders), so the platform figure is the evidence.</p>
+        </div>
+      </article>
+
+      <!-- (b) the lane -->
+      <article class="case rise">
+        <div class="tag tag--red">Case B &middot; Rio de Janeiro, Feb&ndash;Mar 2018</div>
+        <div class="case__body">
+          <dl class="beats">
+            <dt>What happened</dt>
+            <dd>Late deliveries to Rio jumped from <b data-ledger="N31">&nbsp;</b> to
+                <b data-ledger="N32">&nbsp;</b> across five weeks.</dd>
+
+            <dt>Whose fault</dt>
+            <dd>Not the sellers. Rio&rsquo;s late-handoff rate barely moved
+                (<b data-ledger="N117">&nbsp;</b> &rarr; <b data-ledger="N118">&nbsp;</b>), while the
+                carrier leg stretched from <b data-ledger="N115">&nbsp;</b> to
+                <b data-ledger="N116">&nbsp;</b> days.</dd>
+
+            <dt>What it cost</dt>
+            <dd><b data-ledger="N119">&nbsp;</b> late orders above what Rio&rsquo;s own normal rate
+                would have produced &mdash; <strong>twelve times</strong> the seller case, from one
+                region in five weeks.</dd>
+
+            <dt>Recommended action</dt>
+            <dd>Promise and carrier fixes for the region: widen the Rio delivery estimate while
+                transit is degraded, and take the transit times to the carrier.</dd>
+          </dl>
+          <div class="chart chart--sm"><canvas id="c-esc-rj" role="img" aria-label="Line chart: Rio de Janeiro’s monthly late rate and median carrier leg, showing the carrier leg stretching from 8.0 to 20.0 days during the episode."></canvas></div>
+          <p class="note">The lane is the lever. The seller is the paperwork.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================= 7. LAUNCH SCORECARD ======================= -->
+<section class="band" id="launch">
+  <div class="shell">
+    <p class="eyebrow">05 &middot; Launch scorecard</p>
+    <h2 class="band__h">New sellers really do have a rough first month.</h2>
+    <figure class="card rise">
+      <div class="tag">Cancellation rate by seller tenure, matched within calendar month</div>
+      <div class="card__body">
+        <div class="chart"><canvas id="c-launch" role="img" aria-label="Bar chart: cancellation rate by seller tenure, matched within calendar month. First 30 days 0.9% against a month-matched 0.39% after day 90."></canvas></div>
+        <p class="note">The gap survives the time trend: <b data-ledger="N84">&nbsp;</b> in the first
+           30 days against a month-matched <b data-ledger="N87">&nbsp;</b> after day 90 &mdash; each
+           month weighted by its new-seller volume, so not simply
+           <b data-ledger="N86">&nbsp;</b> &divide; <b data-ledger="N85">&nbsp;</b>.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+
+<!-- ======================= 8. THE FIXES ======================= -->
+<section class="band" id="fixes">
+  <div class="shell">
+    <p class="eyebrow">06 &middot; The fixes, sized</p>
+    <h2 class="band__h">The seller programme is the smallest lever of the three.</h2>
+
+    <figure class="card rise">
+      <div class="tag">Late orders avoided, ranked</div>
+      <div class="card__body">
+        <div class="chart"><canvas id="c-fixes" role="img" aria-label="Bar chart: late orders avoided by each fix. Episode response 782, seller handoff programme 231, lane-level promise 142."></canvas></div>
+        <p class="note">Only what was actually actionable counts: Black Friday is on the calendar so
+           it is counted in full, February&ndash;March only from the point the monitor could have
+           confirmed it.</p>
+      </div>
+    </figure>
+
+    <ul class="fixlist rise" id="fixlist"></ul>
+
+    <figure class="card calc rise">
+      <div class="tag">What it is worth at your scale</div>
+      <div class="card__body">
+        <p class="note note--lead">Your numbers, not Instacart&rsquo;s. Nothing here is a claim about
+           their costs.</p>
+        <div class="calc__grid">
+          <label>Orders a year
+            <input type="number" id="ci-orders" placeholder="e.g. 5,000,000" min="0" step="1000">
+          </label>
+          <label>Defect rate cut (pp)
+            <input type="number" id="ci-pp" placeholder="e.g. 0.5" min="0" step="0.1">
+          </label>
+          <label>Cost per defect
+            <input type="number" id="ci-cost" placeholder="e.g. 12" min="0" step="0.5">
+          </label>
+        </div>
+        <div class="calc__out">
+          <div><span class="calc__v" id="co-defects">&mdash;</span><span class="calc__l">defects avoided a year</span></div>
+          <div><span class="calc__v" id="co-value">&mdash;</span><span class="calc__l">value a year</span></div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+
+<!-- ======================= 9. THE PLAN ======================= -->
+<section class="band" id="plan">
+  <div class="shell">
+    <p class="eyebrow">07 &middot; The plan</p>
+    <h2 class="band__h">Three moves, in order of what the data supports.</h2>
+    <p class="band__sub">Owners are illustrative functional roles, not Instacart teams.</p>
+
+    <ol class="plan rise">
+      <li>
+        <span class="plan__n">01</span>
+        <div>
+          <h3>Wire the monitor to a weekly review</h3>
+          <p>Define the SEV1 trigger and who looks at it. The detection already works; nothing
+             routes it to a person.</p>
+          <dl class="plan__meta">
+            <dt>Owner</dt><dd>Marketplace Quality Analytics</dd>
+            <dt>Watch</dt><dd>Weeks from spike to detection</dd>
+            <dt>When</dt><dd>0&ndash;30 days</dd>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <span class="plan__n">02</span>
+        <div>
+          <h3>Run the episode-response playbook on the next flagged week</h3>
+          <p>Widen the promise in the affected lanes while transit is degraded. Biggest lever at
+             <b data-ledger="N70">&nbsp;</b> late orders avoided &mdash; but the cost in lost
+             conversions cannot be measured here.</p>
+          <dl class="plan__meta">
+            <dt>Owner</dt><dd>Fulfilment Operations</dd>
+            <dt>Watch</dt><dd>Late orders inside flagged weeks</dd>
+            <dt>When</dt><dd>30&ndash;60 days</dd>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <span class="plan__n">03</span>
+        <div>
+          <h3>Put the <b data-ledger="N41">&nbsp;</b> flagged sellers on a handoff track</h3>
+          <p>Worth <b data-ledger="N62">&nbsp;</b> late orders, so do it for the review damage,
+             not the late rate.</p>
+          <dl class="plan__meta">
+            <dt>Owner</dt><dd>Seller Operations</dd>
+            <dt>Watch</dt><dd>Flagged-seller late-handoff rate</dd>
+            <dt>When</dt><dd>60&ndash;90 days</dd>
+          </dl>
+        </div>
+      </li>
+    </ol>
+
+    <a class="deck rise" href="deck.pdf" download>
+      <span class="deck__i" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"
+          stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span><b>Download the 6-slide insights deck</b><em>PDF, generated from the same numbers as this page</em></span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ======================= 10. WATCHLIST (dashboard panel) ======================= -->
+<section class="band" id="watchlist">
+  <div class="shell">
+    <p class="eyebrow">08 &middot; Seller watchlist</p>
+    <h2 class="band__h"><b data-ledger="N41">&nbsp;</b> sellers are reliably worse than the platform.</h2>
+    <p class="band__sub">An operating view, not a chart: filter it, sort it, and the summary follows
+       what you are looking at.</p>
+
+    <!-- A working panel. The toolbar filters the scatter, the table and the
+         summary strip together, so what you read always matches what you
+         selected. -->
+    <div class="panel rise">
+      <header class="panel__head">
+        <h3 class="panel__title">Seller quality monitor</h3>
+        <p class="panel__meta">Scored sellers only &mdash; 50+ orders with a handoff timestamp</p>
+      </header>
+
+      <div class="panel__bar">
+        <label class="field">
+          <span class="field__l">Find a seller</span>
+          <input type="search" id="f-seller" placeholder="seller id" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="field">
+          <span class="field__l">State</span>
+          <select id="f-state"><option value="">All states</option></select>
+        </label>
+        <label class="field field--check">
+          <input type="checkbox" id="f-flagged" checked>
+          <span>Flagged only</span>
+        </label>
+        <button type="button" class="field__reset" id="f-reset">Reset</button>
+      </div>
+
+      <ul class="panel__stats" id="panel-stats"></ul>
+
+      <div class="panel__grid">
+        <div class="panel__cell">
+          <p class="panel__cap">Late handoff rate against volume &middot; flagged sellers marked</p>
+          <div class="chart"><canvas id="c-sellers" role="img" aria-label="Scatter plot: late-handoff rate against order volume for all 425 scored sellers, with the 89 flagged sellers marked."></canvas></div>
+          <p class="note">Flagged on a Wilson lower bound, so a seller is only named when their volume
+             makes the rate believable. Across the platform they ship <b data-ledger="N42">&nbsp;</b>
+             of scored orders and produce <b data-ledger="N43">&nbsp;</b> of the late handoffs.</p>
+        </div>
+
+        <div class="panel__cell panel__cell--table">
+          <p class="panel__cap">The watchlist &middot; click a column to sort</p>
+          <div class="tablewrap">
+            <table class="table" id="t-sellers">
+              <thead>
+                <tr>
+                  <th data-sort="seller" class="is-text" tabindex="0">Seller</th>
+                  <th data-sort="seller_state" class="is-text" tabindex="0">State</th>
+                  <th data-sort="orders" tabindex="0">Orders</th>
+                  <th data-sort="late_handoffs" tabindex="0">Late handoffs</th>
+                  <th data-sort="late_handoff_pct" aria-sort="descending" tabindex="0">Late handoff</th>
+                  <th data-sort="late_delivery_pct" tabindex="0">Late delivery</th>
+                  <th data-sort="low_review_pct" tabindex="0">1&ndash;2&#9733;</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="note" id="t-empty" hidden>No seller matches that filter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="shell foot__grid">
+    <p><b>Brazilian E-Commerce Public Dataset by Olist</b>, via Kaggle, licensed CC BY-NC-SA 4.0.
+       Multi-day parcel shipping in Brazil, 2017&ndash;2018 &mdash; the methods transfer, the
+       timescales and specific numbers do not.</p>
+    <p>Independent portfolio project. Not affiliated with Instacart.
+       <a href="method.html">Method &amp; SQL</a></p>
+  </div>
+</footer>
+
+<script src="vendor/chart.umd.min.js"></script>
+<script src="js/main.js?v=17"></script>
+</body>
+</html>

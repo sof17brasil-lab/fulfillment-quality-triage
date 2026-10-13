@@ -1,0 +1,134 @@
+[
+ [
+  {
+   "n": 1,
+   "check_name": "raw orders rows",
+   "expected": 99441,
+   "actual": 99441,
+   "status": "PASS"
+  },
+  {
+   "n": 2,
+   "check_name": "raw order_items rows",
+   "expected": 112650,
+   "actual": 112650,
+   "status": "PASS"
+  },
+  {
+   "n": 3,
+   "check_name": "raw sellers rows",
+   "expected": 3095,
+   "actual": 3095,
+   "status": "PASS"
+  },
+  {
+   "n": 4,
+   "check_name": "raw customers rows",
+   "expected": 99441,
+   "actual": 99441,
+   "status": "PASS"
+  },
+  {
+   "n": 5,
+   "check_name": "raw order_reviews rows",
+   "expected": 99224,
+   "actual": 99224,
+   "status": "PASS"
+  },
+  {
+   "n": 6,
+   "check_name": "fct_orders has one row per order (duplicates)",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 7,
+   "check_name": "review staging has one row per order (duplicates)",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 8,
+   "check_name": "distinct purchase weeks",
+   "expected": 86,
+   "actual": 86,
+   "status": "PASS"
+  },
+  {
+   "n": 9,
+   "check_name": "orders outside the window",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 10,
+   "check_name": "orders with no outcome",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 11,
+   "check_name": "outcome buckets add up to all orders (difference)",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 12,
+   "check_name": "late flag disagrees with date comparison",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 13,
+   "check_name": "promised dates not at midnight",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 14,
+   "check_name": "late orders with no cause assigned",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 15,
+   "check_name": "causes add up to late orders (difference)",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  },
+  {
+   "n": 16,
+   "check_name": "fct_order_seller rows vs distinct order-seller pairs (difference)",
+   "expected": 0,
+   "actual": 0,
+   "status": "PASS"
+  }
+ ],
+ [
+  {
+   "note": "delivered orders with no delivery timestamp (counted as stalled)",
+   "orders": 8
+  },
+  {
+   "note": "delivered before handed to carrier (timestamps out of order)",
+   "orders": 19
+  },
+  {
+   "note": "cancelled or unavailable orders with no line items (cannot be tied to a seller)",
+   "orders": 720
+  },
+  {
+   "note": "orders with items from more than one seller",
+   "orders": 1272
+  }
+ ]
+]

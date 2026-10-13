@@ -1,0 +1,17 @@
+[
+ [
+  {
+   "orders": 98962,
+   "delivered_on_time": 89556,
+   "delivered_late": 6531,
+   "cancelled": 1168,
+   "stalled": 1707,
+   "perfect_order_pct": 90.5,
+   "defect_pct": 9.5,
+   "late_pct_of_delivered": 6.8,
+   "cancel_pct": 1.18,
+   "stalled_pct": 1.72,
+   "late_handoff_pct": 8.96
+  }
+ ]
+]

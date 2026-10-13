@@ -1,0 +1,215 @@
+[
+ [
+  {
+   "period": "Normal weeks",
+   "weeks": 78,
+   "orders_per_week": 1072.0,
+   "late_pct": 4.7,
+   "late_handoff_pct": 8.5,
+   "handoff_days_p50": 2.1,
+   "transit_days_p50": 7.0,
+   "transit_days_p90": 16.7,
+   "promised_days_p50": 24.3
+  },
+  {
+   "period": "Black Friday 2017",
+   "weeks": 3,
+   "orders_per_week": 2266.0,
+   "late_pct": 14.7,
+   "late_handoff_pct": 14.1,
+   "handoff_days_p50": 3.1,
+   "transit_days_p50": 9.8,
+   "transit_days_p90": 25.9,
+   "promised_days_p50": 25.0
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "weeks": 5,
+   "orders_per_week": 1707.0,
+   "late_pct": 21.0,
+   "late_handoff_pct": 9.1,
+   "handoff_days_p50": 2.4,
+   "transit_days_p50": 11.1,
+   "transit_days_p90": 30.0,
+   "promised_days_p50": 23.2
+  }
+ ],
+ [
+  {
+   "period": "Black Friday 2017",
+   "late_cause": "carrier_or_promise",
+   "late_orders": 656,
+   "share_pct": 67.6
+  },
+  {
+   "period": "Black Friday 2017",
+   "late_cause": "shared",
+   "late_orders": 202,
+   "share_pct": 20.8
+  },
+  {
+   "period": "Black Friday 2017",
+   "late_cause": "seller_handoff",
+   "late_orders": 112,
+   "share_pct": 11.5
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "late_cause": "carrier_or_promise",
+   "late_orders": 1489,
+   "share_pct": 85.6
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "late_cause": "shared",
+   "late_orders": 178,
+   "share_pct": 10.2
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "late_cause": "seller_handoff",
+   "late_orders": 72,
+   "share_pct": 4.1
+  },
+  {
+   "period": "Normal weeks",
+   "late_cause": "carrier_or_promise",
+   "late_orders": 2574,
+   "share_pct": 67.4
+  },
+  {
+   "period": "Normal weeks",
+   "late_cause": "seller_handoff",
+   "late_orders": 625,
+   "share_pct": 16.4
+  },
+  {
+   "period": "Normal weeks",
+   "late_cause": "shared",
+   "late_orders": 622,
+   "share_pct": 16.3
+  }
+ ],
+ [
+  {
+   "period": "Black Friday 2017",
+   "customer_state": "RJ",
+   "delivered": 946,
+   "normal_late_pct": 6.6,
+   "episode_late_pct": 35.7,
+   "excess_late_orders": 275.0,
+   "share_of_excess_pct": 41.7,
+   "share_of_volume_pct": 14.4
+  },
+  {
+   "period": "Black Friday 2017",
+   "customer_state": "SP",
+   "delivered": 2610,
+   "normal_late_pct": 3.8,
+   "episode_late_pct": 6.7,
+   "excess_late_orders": 77.0,
+   "share_of_excess_pct": 11.7,
+   "share_of_volume_pct": 39.6
+  },
+  {
+   "period": "Black Friday 2017",
+   "customer_state": "RS",
+   "delivered": 364,
+   "normal_late_pct": 3.7,
+   "episode_late_pct": 16.2,
+   "excess_late_orders": 46.0,
+   "share_of_excess_pct": 6.9,
+   "share_of_volume_pct": 5.5
+  },
+  {
+   "period": "Black Friday 2017",
+   "customer_state": "MG",
+   "delivered": 892,
+   "normal_late_pct": 2.8,
+   "episode_late_pct": 7.7,
+   "excess_late_orders": 44.0,
+   "share_of_excess_pct": 6.7,
+   "share_of_volume_pct": 13.5
+  },
+  {
+   "period": "Black Friday 2017",
+   "customer_state": "SC",
+   "delivered": 243,
+   "normal_late_pct": 5.2,
+   "episode_late_pct": 18.9,
+   "excess_late_orders": 33.0,
+   "share_of_excess_pct": 5.1,
+   "share_of_volume_pct": 3.7
+  },
+  {
+   "period": "Black Friday 2017",
+   "customer_state": "BA",
+   "delivered": 220,
+   "normal_late_pct": 9.4,
+   "episode_late_pct": 21.8,
+   "excess_late_orders": 27.0,
+   "share_of_excess_pct": 4.1,
+   "share_of_volume_pct": 3.3
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "customer_state": "RJ",
+   "delivered": 1129,
+   "normal_late_pct": 6.6,
+   "episode_late_pct": 42.2,
+   "excess_late_orders": 402.0,
+   "share_of_excess_pct": 29.8,
+   "share_of_volume_pct": 13.6
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "customer_state": "SP",
+   "delivered": 3351,
+   "normal_late_pct": 3.8,
+   "episode_late_pct": 10.5,
+   "excess_late_orders": 226.0,
+   "share_of_excess_pct": 16.8,
+   "share_of_volume_pct": 40.4
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "customer_state": "MG",
+   "delivered": 992,
+   "normal_late_pct": 2.8,
+   "episode_late_pct": 19.0,
+   "excess_late_orders": 160.0,
+   "share_of_excess_pct": 11.9,
+   "share_of_volume_pct": 12.0
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "customer_state": "RS",
+   "delivered": 474,
+   "normal_late_pct": 3.7,
+   "episode_late_pct": 21.5,
+   "excess_late_orders": 85.0,
+   "share_of_excess_pct": 6.3,
+   "share_of_volume_pct": 5.7
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "customer_state": "SC",
+   "delivered": 310,
+   "normal_late_pct": 5.2,
+   "episode_late_pct": 29.0,
+   "excess_late_orders": 74.0,
+   "share_of_excess_pct": 5.5,
+   "share_of_volume_pct": 3.7
+  },
+  {
+   "period": "Feb-Mar 2018",
+   "customer_state": "BA",
+   "delivered": 287,
+   "normal_late_pct": 9.4,
+   "episode_late_pct": 31.0,
+   "excess_late_orders": 62.0,
+   "share_of_excess_pct": 4.6,
+   "share_of_volume_pct": 3.5
+  }
+ ]
+]

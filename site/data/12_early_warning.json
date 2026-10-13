@@ -1,0 +1,836 @@
+[
+ [
+  {
+   "purchase_week": "2017-01-02",
+   "week_end": "2017-01-08T00:00:00",
+   "in_transit": 3,
+   "share_10plus_pct": 0.0,
+   "expected_pct": null,
+   "upper_limit_pct": null,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-01-09",
+   "week_end": "2017-01-15T00:00:00",
+   "in_transit": 62,
+   "share_10plus_pct": 0.0,
+   "expected_pct": 0.0,
+   "upper_limit_pct": 0.0,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-01-16",
+   "week_end": "2017-01-22T00:00:00",
+   "in_transit": 123,
+   "share_10plus_pct": 4.07,
+   "expected_pct": 0.0,
+   "upper_limit_pct": 0.0,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-01-23",
+   "week_end": "2017-01-29T00:00:00",
+   "in_transit": 258,
+   "share_10plus_pct": 9.3,
+   "expected_pct": 0.0,
+   "upper_limit_pct": 0.0,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-01-30",
+   "week_end": "2017-02-05T00:00:00",
+   "in_transit": 421,
+   "share_10plus_pct": 9.98,
+   "expected_pct": 2.03,
+   "upper_limit_pct": 4.1,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-02-06",
+   "week_end": "2017-02-12T00:00:00",
+   "in_transit": 571,
+   "share_10plus_pct": 14.71,
+   "expected_pct": 4.07,
+   "upper_limit_pct": 6.54,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-02-13",
+   "week_end": "2017-02-19T00:00:00",
+   "in_transit": 517,
+   "share_10plus_pct": 21.47,
+   "expected_pct": 6.68,
+   "upper_limit_pct": 9.98,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-02-20",
+   "week_end": "2017-02-26T00:00:00",
+   "in_transit": 497,
+   "share_10plus_pct": 23.34,
+   "expected_pct": 9.3,
+   "upper_limit_pct": 13.21,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-02-27",
+   "week_end": "2017-03-05T00:00:00",
+   "in_transit": 593,
+   "share_10plus_pct": 30.19,
+   "expected_pct": 9.64,
+   "upper_limit_pct": 13.28,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-03-06",
+   "week_end": "2017-03-12T00:00:00",
+   "in_transit": 691,
+   "share_10plus_pct": 20.98,
+   "expected_pct": 9.98,
+   "upper_limit_pct": 13.4,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-03-13",
+   "week_end": "2017-03-19T00:00:00",
+   "in_transit": 781,
+   "share_10plus_pct": 21.9,
+   "expected_pct": 12.34,
+   "upper_limit_pct": 15.87,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-03-20",
+   "week_end": "2017-03-26T00:00:00",
+   "in_transit": 819,
+   "share_10plus_pct": 25.03,
+   "expected_pct": 14.71,
+   "upper_limit_pct": 18.42,
+   "status": "warming up"
+  },
+  {
+   "purchase_week": "2017-03-27",
+   "week_end": "2017-04-02T00:00:00",
+   "in_transit": 818,
+   "share_10plus_pct": 29.83,
+   "expected_pct": 17.85,
+   "upper_limit_pct": 21.86,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-04-03",
+   "week_end": "2017-04-09T00:00:00",
+   "in_transit": 803,
+   "share_10plus_pct": 33.5,
+   "expected_pct": 20.98,
+   "upper_limit_pct": 25.29,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-04-10",
+   "week_end": "2017-04-16T00:00:00",
+   "in_transit": 800,
+   "share_10plus_pct": 36.5,
+   "expected_pct": 21.23,
+   "upper_limit_pct": 25.56,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-04-17",
+   "week_end": "2017-04-23T00:00:00",
+   "in_transit": 658,
+   "share_10plus_pct": 41.03,
+   "expected_pct": 21.47,
+   "upper_limit_pct": 26.27,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-04-24",
+   "week_end": "2017-04-30T00:00:00",
+   "in_transit": 1132,
+   "share_10plus_pct": 34.28,
+   "expected_pct": 21.68,
+   "upper_limit_pct": 25.36,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-05-01",
+   "week_end": "2017-05-07T00:00:00",
+   "in_transit": 1258,
+   "share_10plus_pct": 37.36,
+   "expected_pct": 21.9,
+   "upper_limit_pct": 25.39,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-05-08",
+   "week_end": "2017-05-14T00:00:00",
+   "in_transit": 1287,
+   "share_10plus_pct": 31.47,
+   "expected_pct": 22.62,
+   "upper_limit_pct": 26.12,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-05-15",
+   "week_end": "2017-05-21T00:00:00",
+   "in_transit": 1278,
+   "share_10plus_pct": 31.77,
+   "expected_pct": 23.34,
+   "upper_limit_pct": 26.89,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-05-22",
+   "week_end": "2017-05-28T00:00:00",
+   "in_transit": 1138,
+   "share_10plus_pct": 30.14,
+   "expected_pct": 24.19,
+   "upper_limit_pct": 27.99,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-05-29",
+   "week_end": "2017-06-04T00:00:00",
+   "in_transit": 1032,
+   "share_10plus_pct": 33.04,
+   "expected_pct": 25.03,
+   "upper_limit_pct": 29.08,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-06-05",
+   "week_end": "2017-06-11T00:00:00",
+   "in_transit": 1139,
+   "share_10plus_pct": 31.52,
+   "expected_pct": 27.43,
+   "upper_limit_pct": 31.4,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-06-12",
+   "week_end": "2017-06-18T00:00:00",
+   "in_transit": 1221,
+   "share_10plus_pct": 34.15,
+   "expected_pct": 29.83,
+   "upper_limit_pct": 33.76,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-06-19",
+   "week_end": "2017-06-25T00:00:00",
+   "in_transit": 1088,
+   "share_10plus_pct": 38.24,
+   "expected_pct": 29.98,
+   "upper_limit_pct": 34.15,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-06-26",
+   "week_end": "2017-07-02T00:00:00",
+   "in_transit": 1101,
+   "share_10plus_pct": 35.6,
+   "expected_pct": 30.14,
+   "upper_limit_pct": 34.29,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-07-03",
+   "week_end": "2017-07-09T00:00:00",
+   "in_transit": 1161,
+   "share_10plus_pct": 37.21,
+   "expected_pct": 30.16,
+   "upper_limit_pct": 34.2,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-07-10",
+   "week_end": "2017-07-16T00:00:00",
+   "in_transit": 1306,
+   "share_10plus_pct": 33.15,
+   "expected_pct": 30.83,
+   "upper_limit_pct": 34.66,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-07-17",
+   "week_end": "2017-07-23T00:00:00",
+   "in_transit": 1441,
+   "share_10plus_pct": 33.17,
+   "expected_pct": 31.49,
+   "upper_limit_pct": 35.16,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-07-24",
+   "week_end": "2017-07-30T00:00:00",
+   "in_transit": 1376,
+   "share_10plus_pct": 37.57,
+   "expected_pct": 31.64,
+   "upper_limit_pct": 35.4,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-07-31",
+   "week_end": "2017-08-06T00:00:00",
+   "in_transit": 1331,
+   "share_10plus_pct": 39.97,
+   "expected_pct": 32.41,
+   "upper_limit_pct": 36.25,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-08-07",
+   "week_end": "2017-08-13T00:00:00",
+   "in_transit": 1374,
+   "share_10plus_pct": 38.43,
+   "expected_pct": 33.1,
+   "upper_limit_pct": 36.91,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-08-14",
+   "week_end": "2017-08-20T00:00:00",
+   "in_transit": 1437,
+   "share_10plus_pct": 39.74,
+   "expected_pct": 33.16,
+   "upper_limit_pct": 36.89,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-08-21",
+   "week_end": "2017-08-27T00:00:00",
+   "in_transit": 1355,
+   "share_10plus_pct": 40.59,
+   "expected_pct": 33.34,
+   "upper_limit_pct": 37.18,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-08-28",
+   "week_end": "2017-09-03T00:00:00",
+   "in_transit": 1386,
+   "share_10plus_pct": 41.13,
+   "expected_pct": 33.83,
+   "upper_limit_pct": 37.64,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-09-04",
+   "week_end": "2017-09-10T00:00:00",
+   "in_transit": 1469,
+   "share_10plus_pct": 41.52,
+   "expected_pct": 34.21,
+   "upper_limit_pct": 37.93,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-09-11",
+   "week_end": "2017-09-17T00:00:00",
+   "in_transit": 1581,
+   "share_10plus_pct": 36.81,
+   "expected_pct": 34.94,
+   "upper_limit_pct": 38.54,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-09-18",
+   "week_end": "2017-09-24T00:00:00",
+   "in_transit": 1578,
+   "share_10plus_pct": 34.47,
+   "expected_pct": 36.05,
+   "upper_limit_pct": 39.68,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-09-25",
+   "week_end": "2017-10-01T00:00:00",
+   "in_transit": 1567,
+   "share_10plus_pct": 41.16,
+   "expected_pct": 36.05,
+   "upper_limit_pct": 39.69,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-10-02",
+   "week_end": "2017-10-08T00:00:00",
+   "in_transit": 1618,
+   "share_10plus_pct": 40.73,
+   "expected_pct": 36.66,
+   "upper_limit_pct": 40.25,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-10-09",
+   "week_end": "2017-10-15T00:00:00",
+   "in_transit": 1512,
+   "share_10plus_pct": 42.39,
+   "expected_pct": 37.01,
+   "upper_limit_pct": 40.74,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-10-16",
+   "week_end": "2017-10-22T00:00:00",
+   "in_transit": 1619,
+   "share_10plus_pct": 38.23,
+   "expected_pct": 37.29,
+   "upper_limit_pct": 40.89,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-10-23",
+   "week_end": "2017-10-29T00:00:00",
+   "in_transit": 1550,
+   "share_10plus_pct": 38.45,
+   "expected_pct": 37.29,
+   "upper_limit_pct": 40.97,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-10-30",
+   "week_end": "2017-11-05T00:00:00",
+   "in_transit": 1462,
+   "share_10plus_pct": 47.06,
+   "expected_pct": 37.47,
+   "upper_limit_pct": 41.26,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-11-06",
+   "week_end": "2017-11-12T00:00:00",
+   "in_transit": 1633,
+   "share_10plus_pct": 38.52,
+   "expected_pct": 37.9,
+   "upper_limit_pct": 41.5,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-11-13",
+   "week_end": "2017-11-19T00:00:00",
+   "in_transit": 1901,
+   "share_10plus_pct": 35.14,
+   "expected_pct": 38.23,
+   "upper_limit_pct": 41.58,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-11-20",
+   "week_end": "2017-11-26T00:00:00",
+   "in_transit": 2203,
+   "share_10plus_pct": 28.6,
+   "expected_pct": 38.23,
+   "upper_limit_pct": 41.34,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-11-27",
+   "week_end": "2017-12-03T00:00:00",
+   "in_transit": 3554,
+   "share_10plus_pct": 22.0,
+   "expected_pct": 38.23,
+   "upper_limit_pct": 40.68,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2017-12-04",
+   "week_end": "2017-12-10T00:00:00",
+   "in_transit": 3823,
+   "share_10plus_pct": 40.7,
+   "expected_pct": 38.23,
+   "upper_limit_pct": 40.59,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-12-11",
+   "week_end": "2017-12-17T00:00:00",
+   "in_transit": 3635,
+   "share_10plus_pct": 50.65,
+   "expected_pct": 38.33,
+   "upper_limit_pct": 40.75,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-12-18",
+   "week_end": "2017-12-24T00:00:00",
+   "in_transit": 3056,
+   "share_10plus_pct": 55.1,
+   "expected_pct": 38.44,
+   "upper_limit_pct": 41.08,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2017-12-25",
+   "week_end": "2017-12-31T00:00:00",
+   "in_transit": 2404,
+   "share_10plus_pct": 69.13,
+   "expected_pct": 38.48,
+   "upper_limit_pct": 41.46,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-01-01",
+   "week_end": "2018-01-07T00:00:00",
+   "in_transit": 2391,
+   "share_10plus_pct": 57.88,
+   "expected_pct": 39.13,
+   "upper_limit_pct": 42.12,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-01-08",
+   "week_end": "2018-01-14T00:00:00",
+   "in_transit": 2517,
+   "share_10plus_pct": 39.29,
+   "expected_pct": 39.85,
+   "upper_limit_pct": 42.78,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-01-15",
+   "week_end": "2018-01-21T00:00:00",
+   "in_transit": 3003,
+   "share_10plus_pct": 38.79,
+   "expected_pct": 39.85,
+   "upper_limit_pct": 42.53,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-01-22",
+   "week_end": "2018-01-28T00:00:00",
+   "in_transit": 2912,
+   "share_10plus_pct": 43.68,
+   "expected_pct": 39.85,
+   "upper_limit_pct": 42.57,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-01-29",
+   "week_end": "2018-02-04T00:00:00",
+   "in_transit": 2808,
+   "share_10plus_pct": 44.3,
+   "expected_pct": 40.28,
+   "upper_limit_pct": 43.06,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-02-05",
+   "week_end": "2018-02-11T00:00:00",
+   "in_transit": 3138,
+   "share_10plus_pct": 41.52,
+   "expected_pct": 40.65,
+   "upper_limit_pct": 43.28,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-02-12",
+   "week_end": "2018-02-18T00:00:00",
+   "in_transit": 3356,
+   "share_10plus_pct": 50.66,
+   "expected_pct": 40.72,
+   "upper_limit_pct": 43.26,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-02-19",
+   "week_end": "2018-02-25T00:00:00",
+   "in_transit": 3430,
+   "share_10plus_pct": 41.81,
+   "expected_pct": 40.93,
+   "upper_limit_pct": 43.45,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-02-26",
+   "week_end": "2018-03-04T00:00:00",
+   "in_transit": 3719,
+   "share_10plus_pct": 46.2,
+   "expected_pct": 41.14,
+   "upper_limit_pct": 43.56,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-03-05",
+   "week_end": "2018-03-11T00:00:00",
+   "in_transit": 3931,
+   "share_10plus_pct": 49.86,
+   "expected_pct": 41.34,
+   "upper_limit_pct": 43.7,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-03-12",
+   "week_end": "2018-03-18T00:00:00",
+   "in_transit": 4024,
+   "share_10plus_pct": 55.14,
+   "expected_pct": 41.34,
+   "upper_limit_pct": 43.67,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-03-19",
+   "week_end": "2018-03-25T00:00:00",
+   "in_transit": 4101,
+   "share_10plus_pct": 57.08,
+   "expected_pct": 41.67,
+   "upper_limit_pct": 43.97,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-03-26",
+   "week_end": "2018-04-01T00:00:00",
+   "in_transit": 3969,
+   "share_10plus_pct": 62.89,
+   "expected_pct": 42.1,
+   "upper_limit_pct": 44.45,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-04-02",
+   "week_end": "2018-04-08T00:00:00",
+   "in_transit": 3755,
+   "share_10plus_pct": 59.31,
+   "expected_pct": 43.04,
+   "upper_limit_pct": 45.46,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-04-09",
+   "week_end": "2018-04-15T00:00:00",
+   "in_transit": 3284,
+   "share_10plus_pct": 59.59,
+   "expected_pct": 43.99,
+   "upper_limit_pct": 46.59,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-04-16",
+   "week_end": "2018-04-22T00:00:00",
+   "in_transit": 3205,
+   "share_10plus_pct": 53.67,
+   "expected_pct": 45.25,
+   "upper_limit_pct": 47.89,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-04-23",
+   "week_end": "2018-04-29T00:00:00",
+   "in_transit": 3136,
+   "share_10plus_pct": 52.07,
+   "expected_pct": 46.63,
+   "upper_limit_pct": 49.3,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-04-30",
+   "week_end": "2018-05-06T00:00:00",
+   "in_transit": 3019,
+   "share_10plus_pct": 52.67,
+   "expected_pct": 48.46,
+   "upper_limit_pct": 51.19,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-05-07",
+   "week_end": "2018-05-13T00:00:00",
+   "in_transit": 3106,
+   "share_10plus_pct": 45.04,
+   "expected_pct": 50.25,
+   "upper_limit_pct": 52.94,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-05-14",
+   "week_end": "2018-05-20T00:00:00",
+   "in_transit": 3005,
+   "share_10plus_pct": 48.19,
+   "expected_pct": 50.25,
+   "upper_limit_pct": 52.99,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-05-21",
+   "week_end": "2018-05-27T00:00:00",
+   "in_transit": 2684,
+   "share_10plus_pct": 56.63,
+   "expected_pct": 50.25,
+   "upper_limit_pct": 53.15,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-05-28",
+   "week_end": "2018-06-03T00:00:00",
+   "in_transit": 2890,
+   "share_10plus_pct": 70.66,
+   "expected_pct": 50.65,
+   "upper_limit_pct": 53.44,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-06-04",
+   "week_end": "2018-06-10T00:00:00",
+   "in_transit": 2537,
+   "share_10plus_pct": 54.83,
+   "expected_pct": 51.36,
+   "upper_limit_pct": 54.34,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-06-11",
+   "week_end": "2018-06-17T00:00:00",
+   "in_transit": 2599,
+   "share_10plus_pct": 50.87,
+   "expected_pct": 52.37,
+   "upper_limit_pct": 55.31,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-06-18",
+   "week_end": "2018-06-24T00:00:00",
+   "in_transit": 2331,
+   "share_10plus_pct": 55.34,
+   "expected_pct": 52.37,
+   "upper_limit_pct": 55.47,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-06-25",
+   "week_end": "2018-07-01T00:00:00",
+   "in_transit": 2270,
+   "share_10plus_pct": 55.37,
+   "expected_pct": 52.37,
+   "upper_limit_pct": 55.51,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-07-02",
+   "week_end": "2018-07-08T00:00:00",
+   "in_transit": 2218,
+   "share_10plus_pct": 55.14,
+   "expected_pct": 52.37,
+   "upper_limit_pct": 55.55,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-07-09",
+   "week_end": "2018-07-15T00:00:00",
+   "in_transit": 1530,
+   "share_10plus_pct": 75.56,
+   "expected_pct": 52.37,
+   "upper_limit_pct": 56.2,
+   "status": "alert"
+  },
+  {
+   "purchase_week": "2018-07-16",
+   "week_end": "2018-07-22T00:00:00",
+   "in_transit": 2520,
+   "share_10plus_pct": 49.01,
+   "expected_pct": 53.17,
+   "upper_limit_pct": 56.15,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-07-23",
+   "week_end": "2018-07-29T00:00:00",
+   "in_transit": 2453,
+   "share_10plus_pct": 50.79,
+   "expected_pct": 53.17,
+   "upper_limit_pct": 56.19,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-07-30",
+   "week_end": "2018-08-05T00:00:00",
+   "in_transit": 2479,
+   "share_10plus_pct": 51.27,
+   "expected_pct": 53.17,
+   "upper_limit_pct": 56.17,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-08-06",
+   "week_end": "2018-08-12T00:00:00",
+   "in_transit": 2765,
+   "share_10plus_pct": 45.5,
+   "expected_pct": 53.17,
+   "upper_limit_pct": 56.01,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-08-13",
+   "week_end": "2018-08-19T00:00:00",
+   "in_transit": 2693,
+   "share_10plus_pct": 47.94,
+   "expected_pct": 53.17,
+   "upper_limit_pct": 56.05,
+   "status": "ok"
+  },
+  {
+   "purchase_week": "2018-08-20",
+   "week_end": "2018-08-26T00:00:00",
+   "in_transit": 2393,
+   "share_10plus_pct": 54.41,
+   "expected_pct": 53.17,
+   "upper_limit_pct": 56.23,
+   "status": "ok"
+  }
+ ],
+ [
+  {
+   "episode": "Black Friday 2017",
+   "purchase_week": "2017-10-23",
+   "weeks_before_late_rate_sev1": 4,
+   "share_10plus_pct": 38.45,
+   "status": "ok"
+  },
+  {
+   "episode": "Black Friday 2017",
+   "purchase_week": "2017-10-30",
+   "weeks_before_late_rate_sev1": 3,
+   "share_10plus_pct": 47.06,
+   "status": "alert"
+  },
+  {
+   "episode": "Black Friday 2017",
+   "purchase_week": "2017-11-06",
+   "weeks_before_late_rate_sev1": 2,
+   "share_10plus_pct": 38.52,
+   "status": "ok"
+  },
+  {
+   "episode": "Black Friday 2017",
+   "purchase_week": "2017-11-13",
+   "weeks_before_late_rate_sev1": 1,
+   "share_10plus_pct": 35.14,
+   "status": "ok"
+  },
+  {
+   "episode": "Feb-Mar 2018",
+   "purchase_week": "2018-01-15",
+   "weeks_before_late_rate_sev1": 4,
+   "share_10plus_pct": 38.79,
+   "status": "ok"
+  },
+  {
+   "episode": "Feb-Mar 2018",
+   "purchase_week": "2018-01-22",
+   "weeks_before_late_rate_sev1": 3,
+   "share_10plus_pct": 43.68,
+   "status": "alert"
+  },
+  {
+   "episode": "Feb-Mar 2018",
+   "purchase_week": "2018-01-29",
+   "weeks_before_late_rate_sev1": 2,
+   "share_10plus_pct": 44.3,
+   "status": "alert"
+  },
+  {
+   "episode": "Feb-Mar 2018",
+   "purchase_week": "2018-02-05",
+   "weeks_before_late_rate_sev1": 1,
+   "share_10plus_pct": 41.52,
+   "status": "ok"
+  }
+ ]
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "id": "S01c",
+  "display": "90.3M",
+  "label": "orders in the quarter",
+  "must_contain": ["90.3 million"]
+ },
+ {
+  "id": "S01d",
+  "display": "$115",
+  "label": "average order value",
+  "must_contain": ["$115"]
+ },
+ {
+  "id": "S02a",
+  "display": "2,200+",
+  "label": "retail banners, ~100,000 stores",
+  "must_contain": ["2,200", "100,000"]
+ },
+ {
+  "id": "S01e",
+  "display": "~600,000",
+  "label": "shoppers",
+  "must_contain": ["600,000"]
+ }
+]

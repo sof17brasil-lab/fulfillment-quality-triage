@@ -1,0 +1,1217 @@
+[
+ {
+  "id": "N01",
+  "claim": "Orders analysed (86 complete weeks, 2 Jan 2017 to 26 Aug 2018)",
+  "value": "98962",
+  "unit": "orders",
+  "sql_source": "02",
+  "pandas_value": "98962",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N02",
+  "claim": "Delivered on time",
+  "value": "89556",
+  "unit": "orders",
+  "sql_source": "02",
+  "pandas_value": "89556",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N03",
+  "claim": "Delivered late",
+  "value": "6531",
+  "unit": "orders",
+  "sql_source": "02",
+  "pandas_value": "6531",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N04",
+  "claim": "Cancelled (canceled + unavailable)",
+  "value": "1168",
+  "unit": "orders",
+  "sql_source": "02",
+  "pandas_value": "1168",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N05",
+  "claim": "Stalled (paid, never delivered by the snapshot)",
+  "value": "1707",
+  "unit": "orders",
+  "sql_source": "02",
+  "pandas_value": "1707",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N06",
+  "claim": "Perfect order rate (delivered on time / all orders)",
+  "value": "90.5",
+  "unit": "%",
+  "sql_source": "02",
+  "pandas_value": "90.5",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N07",
+  "claim": "Late rate (late / delivered)",
+  "value": "6.8",
+  "unit": "%",
+  "sql_source": "02",
+  "pandas_value": "6.8",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N08",
+  "claim": "Late seller handoff rate (after shipping limit / orders with a handoff)",
+  "value": "8.96",
+  "unit": "%",
+  "sql_source": "02",
+  "pandas_value": "8.96",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N09",
+  "claim": "Low reviews (1 or 2 stars) on late orders",
+  "value": "62.4",
+  "unit": "%",
+  "sql_source": "03a",
+  "pandas_value": "62.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N10",
+  "claim": "Low reviews (1 or 2 stars) on on-time orders",
+  "value": "9.2",
+  "unit": "%",
+  "sql_source": "03a",
+  "pandas_value": "9.2",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N11",
+  "claim": "Average review, late orders",
+  "value": "2.27",
+  "unit": "stars",
+  "sql_source": "03a",
+  "pandas_value": "2.27",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N12",
+  "claim": "Average review, on-time orders",
+  "value": "4.29",
+  "unit": "stars",
+  "sql_source": "03a",
+  "pandas_value": "4.29",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N13",
+  "claim": "Low reviews on orders 4 to 7 days late (the cliff)",
+  "value": "67.7",
+  "unit": "%",
+  "sql_source": "03b",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N14",
+  "claim": "Low reviews on orders 1 to 3 days late",
+  "value": "32.1",
+  "unit": "%",
+  "sql_source": "03b",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N15",
+  "claim": "Late orders handed off on time (cause: carrier or promise)",
+  "value": "4719",
+  "unit": "orders",
+  "sql_source": "05b",
+  "pandas_value": "4719",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N16",
+  "claim": "Late orders an on-time handoff would have saved (cause: seller)",
+  "value": "809",
+  "unit": "orders",
+  "sql_source": "05b",
+  "pandas_value": "809",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N17",
+  "claim": "Late orders with late handoff AND slow transit (cause: shared)",
+  "value": "1002",
+  "unit": "orders",
+  "sql_source": "05b",
+  "pandas_value": "1002",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N18",
+  "claim": "Share of late orders handed off on time",
+  "value": "72.3",
+  "unit": "%",
+  "sql_source": "05b / 02",
+  "pandas_value": "72.3",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N19",
+  "claim": "Share of late orders caused by the seller alone",
+  "value": "12.4",
+  "unit": "%",
+  "sql_source": "05b / 02",
+  "pandas_value": "12.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N20",
+  "claim": "SEV1 weeks flagged by the monitor",
+  "value": "8",
+  "unit": "weeks",
+  "sql_source": "04",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N21",
+  "claim": "Black Friday 2017: late rate",
+  "value": "14.7",
+  "unit": "%",
+  "sql_source": "05a",
+  "pandas_value": "14.7",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N22",
+  "claim": "Black Friday 2017: late handoff rate",
+  "value": "14.1",
+  "unit": "%",
+  "sql_source": "05a",
+  "pandas_value": "14.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N23",
+  "claim": "Black Friday 2017: orders per week",
+  "value": "2266.0",
+  "unit": "orders",
+  "sql_source": "05a",
+  "pandas_value": "2266",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N24",
+  "claim": "Feb-Mar 2018: late rate",
+  "value": "21.0",
+  "unit": "%",
+  "sql_source": "05a",
+  "pandas_value": "21.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N25",
+  "claim": "Feb-Mar 2018: late handoff rate",
+  "value": "9.1",
+  "unit": "%",
+  "sql_source": "05a",
+  "pandas_value": "9.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N26",
+  "claim": "Feb-Mar 2018: share of late orders handed off on time",
+  "value": "85.6",
+  "unit": "%",
+  "sql_source": "05b",
+  "pandas_value": "85.6",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N27",
+  "claim": "Normal weeks: late rate",
+  "value": "4.7",
+  "unit": "%",
+  "sql_source": "05a",
+  "pandas_value": "4.7",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N28",
+  "claim": "Normal weeks: late handoff rate",
+  "value": "8.5",
+  "unit": "%",
+  "sql_source": "05a",
+  "pandas_value": "8.5",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N29",
+  "claim": "Normal weeks: median transit days",
+  "value": "7.0",
+  "unit": "days",
+  "sql_source": "05a",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N30",
+  "claim": "Feb-Mar 2018: median transit days",
+  "value": "11.1",
+  "unit": "days",
+  "sql_source": "05a",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N31",
+  "claim": "Rio de Janeiro (RJ) late rate, normal weeks",
+  "value": "6.6",
+  "unit": "%",
+  "sql_source": "05c",
+  "pandas_value": "6.6",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N32",
+  "claim": "Rio de Janeiro (RJ) late rate, Feb-Mar 2018",
+  "value": "42.2",
+  "unit": "%",
+  "sql_source": "05c",
+  "pandas_value": "42.2",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N33",
+  "claim": "Rio de Janeiro (RJ) late rate, Black Friday 2017",
+  "value": "35.7",
+  "unit": "%",
+  "sql_source": "05c",
+  "pandas_value": "35.7",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N34",
+  "claim": "RJ share of excess late orders, Feb-Mar 2018",
+  "value": "29.8",
+  "unit": "%",
+  "sql_source": "05c",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N35",
+  "claim": "RJ share of delivered volume, Feb-Mar 2018",
+  "value": "13.6",
+  "unit": "%",
+  "sql_source": "05c",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N36",
+  "claim": "Share of all late orders that fall in the two SEV1 episodes (8 of 86 weeks)",
+  "value": "41.5",
+  "unit": "%",
+  "sql_source": "05b / 02",
+  "pandas_value": "41.5",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N37",
+  "claim": "Median promised delivery time",
+  "value": "24.2",
+  "unit": "days",
+  "sql_source": "06a",
+  "pandas_value": "24.2",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N38",
+  "claim": "Median actual delivery time",
+  "value": "10.2",
+  "unit": "days",
+  "sql_source": "06a",
+  "pandas_value": "10.2",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N39",
+  "claim": "Delivered orders arriving 7+ days before the promise",
+  "value": "78.9",
+  "unit": "%",
+  "sql_source": "06a",
+  "pandas_value": "78.9",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N40",
+  "claim": "Sellers scored (50+ orders with a handoff)",
+  "value": "425",
+  "unit": "sellers",
+  "sql_source": "07a",
+  "pandas_value": "425",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N41",
+  "claim": "Sellers flagged (Wilson lower bound above platform rate)",
+  "value": "89",
+  "unit": "sellers",
+  "sql_source": "07a",
+  "pandas_value": "89",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N42",
+  "claim": "Flagged sellers' share of scored orders",
+  "value": "21.4",
+  "unit": "%",
+  "sql_source": "07a",
+  "pandas_value": "21.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N43",
+  "claim": "Flagged sellers' share of late handoffs",
+  "value": "58.2",
+  "unit": "%",
+  "sql_source": "07a",
+  "pandas_value": "58.2",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N44",
+  "claim": "Late delivery rate after a late handoff",
+  "value": "21.1",
+  "unit": "%",
+  "sql_source": "07c",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N45",
+  "claim": "Late delivery rate after an on-time handoff",
+  "value": "5.4",
+  "unit": "%",
+  "sql_source": "07c",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N46",
+  "claim": "Customers in the window",
+  "value": "95657",
+  "unit": "customers",
+  "sql_source": "08a",
+  "pandas_value": "95657",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N47",
+  "claim": "Customers who ordered more than once",
+  "value": "3.1",
+  "unit": "%",
+  "sql_source": "08a",
+  "pandas_value": "3.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N48",
+  "claim": "Repeat within 180 days, on-time first order",
+  "value": "1.87",
+  "unit": "%",
+  "sql_source": "08b",
+  "pandas_value": "1.87",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N49",
+  "claim": "Repeat within 180 days, late first order",
+  "value": "1.34",
+  "unit": "%",
+  "sql_source": "08b",
+  "pandas_value": "1.34",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N50",
+  "claim": "Repeaters behind N49 (late first order, 180 days)",
+  "value": "35",
+  "unit": "customers",
+  "sql_source": "08b",
+  "pandas_value": "35",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N51",
+  "claim": "Relative drop in 180-day repeat rate after a late first order",
+  "value": "28.3",
+  "unit": "%",
+  "sql_source": "08b",
+  "pandas_value": "28.3",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N52",
+  "claim": "p-value for the 180-day difference (two-proportion z-test)",
+  "value": "0.05",
+  "unit": "p",
+  "sql_source": "08b + check.py",
+  "pandas_value": "0.05",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N53",
+  "claim": "Repeat within 90 days, on-time first order",
+  "value": "1.18",
+  "unit": "%",
+  "sql_source": "08c",
+  "pandas_value": "1.18",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N54",
+  "claim": "Repeat within 90 days, late first order",
+  "value": "0.79",
+  "unit": "%",
+  "sql_source": "08c",
+  "pandas_value": "0.79",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N55",
+  "claim": "Repeaters behind N54 (late first order, 90 days)",
+  "value": "41",
+  "unit": "customers",
+  "sql_source": "08c",
+  "pandas_value": "41",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N56",
+  "claim": "Relative drop in 90-day repeat rate after a late first order",
+  "value": "33.2",
+  "unit": "%",
+  "sql_source": "08c",
+  "pandas_value": "33.2",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N57",
+  "claim": "p-value for the 90-day difference (two-proportion z-test)",
+  "value": "0.011",
+  "unit": "p",
+  "sql_source": "08c + check.py",
+  "pandas_value": "0.011",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N58",
+  "claim": "Late repeat rate vs matched on-time rate, same state and month (180 days)",
+  "value": "1.34 vs 1.76",
+  "unit": "% vs %",
+  "sql_source": "08e",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N59",
+  "claim": "Repeat within 180 days, first order 1 to 3 days late (12 repeaters)",
+  "value": "1.52",
+  "unit": "%",
+  "sql_source": "08d",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N60",
+  "claim": "Repeat within 180 days, first order 4 to 7 days late (10 repeaters)",
+  "value": "1.4",
+  "unit": "%",
+  "sql_source": "08d",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N61",
+  "claim": "Repeat within 180 days, first order 8+ days late (13 repeaters)",
+  "value": "1.17",
+  "unit": "%",
+  "sql_source": "08d",
+  "pandas_value": "",
+  "agreement": "SQL only"
+ },
+ {
+  "id": "N62",
+  "claim": "Seller handoff program: late orders avoided",
+  "value": "231.0",
+  "unit": "orders",
+  "sql_source": "10a",
+  "pandas_value": "231",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N63",
+  "claim": "Seller handoff program: low reviews avoided",
+  "value": "127.0",
+  "unit": "orders",
+  "sql_source": "10a",
+  "pandas_value": "127",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N64",
+  "claim": "Episode response, Black Friday 2017 (planned ahead, counted in full): late orders avoided (promise +7 days)",
+  "value": "505",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "505",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N65",
+  "claim": "Episode response, Black Friday 2017: late orders avoided (promise +3 days)",
+  "value": "269",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "269",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N66",
+  "claim": "Episode response, Black Friday 2017: low reviews avoided",
+  "value": "255",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "255",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N67",
+  "claim": "Episode response, Feb-Mar 2018 (orders purchased after the real detection delay only): late orders avoided (promise +7 days)",
+  "value": "277",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "277",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N68",
+  "claim": "Episode response, Feb-Mar 2018 (detection delay applied): late orders avoided (promise +3 days)",
+  "value": "125",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "125",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N69",
+  "claim": "Episode response, Feb-Mar 2018 (detection delay applied): low reviews avoided",
+  "value": "152",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "152",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N70",
+  "claim": "Episode response: late orders avoided, both parts combined (promise +7 days)",
+  "value": "782",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "782",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N71",
+  "claim": "Episode response: low reviews avoided, both parts combined",
+  "value": "407",
+  "unit": "orders",
+  "sql_source": "10b",
+  "pandas_value": "407",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N72",
+  "claim": "Lane-level promise, Black Friday 2017 (states picked from data before 20 Nov 2017, counted in full): late orders avoided (promise +7 days)",
+  "value": "73",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "73",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N73",
+  "claim": "Lane-level promise, Black Friday 2017: late orders avoided (promise +3 days)",
+  "value": "36",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "36",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N74",
+  "claim": "Lane-level promise, Black Friday 2017: low reviews avoided",
+  "value": "35",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "35",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N75",
+  "claim": "Lane-level promise, Feb-Mar 2018 (states picked from data before 12 Feb 2018; detection delay applied): late orders avoided (promise +7 days)",
+  "value": "69",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "69",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N76",
+  "claim": "Lane-level promise, Feb-Mar 2018 (detection delay applied): late orders avoided (promise +3 days)",
+  "value": "24",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "24",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N77",
+  "claim": "Lane-level promise, Feb-Mar 2018 (detection delay applied): low reviews avoided",
+  "value": "41",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "41",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N78",
+  "claim": "Lane-level promise: late orders avoided, both parts combined (promise +7 days)",
+  "value": "142",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "142",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N79",
+  "claim": "Lane-level promise: low reviews avoided, both parts combined",
+  "value": "76",
+  "unit": "orders",
+  "sql_source": "10c",
+  "pandas_value": "76",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N80",
+  "claim": "New-seller cancel rate, first 30 days (first look, not calendar-controlled)",
+  "value": "0.97",
+  "unit": "%",
+  "sql_source": "11a",
+  "pandas_value": "0.97",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N81",
+  "claim": "New-seller cancel rate, after day 90 (first look, not calendar-controlled)",
+  "value": "0.37",
+  "unit": "%",
+  "sql_source": "11a",
+  "pandas_value": "0.37",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N82",
+  "claim": "New-seller orders behind N84 (first 30 days, matched calendar months)",
+  "value": "7466",
+  "unit": "orders",
+  "sql_source": "11c",
+  "pandas_value": "7466",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N83",
+  "claim": "New-seller cancelled orders behind N84",
+  "value": "67",
+  "unit": "orders",
+  "sql_source": "11c",
+  "pandas_value": "67",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N84",
+  "claim": "New-seller cancel rate, first 30 days, matched to the same calendar month as the comparison",
+  "value": "0.9",
+  "unit": "%",
+  "sql_source": "11c",
+  "pandas_value": "0.9",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N85",
+  "claim": "Veteran-seller (after day 90) orders behind N87, same matched calendar months",
+  "value": "39516",
+  "unit": "orders",
+  "sql_source": "11c",
+  "pandas_value": "39516",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N86",
+  "claim": "Veteran-seller cancelled orders behind N87",
+  "value": "148",
+  "unit": "orders",
+  "sql_source": "11c",
+  "pandas_value": "148",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N87",
+  "claim": "Veteran-seller (after day 90) cancel rate, weighted to match new sellers' calendar months -- NOT N86/N85, which is a smaller unweighted rate (0.37%)",
+  "value": "0.39",
+  "unit": "%",
+  "sql_source": "11c",
+  "pandas_value": "0.39",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N88",
+  "claim": "Transit 10+ day share, week before Black Friday 2017's late-rate SEV1 start (status stayed 'ok': no warning)",
+  "value": "35.14",
+  "unit": "%",
+  "sql_source": "12b",
+  "pandas_value": "35.14",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N89",
+  "claim": "Transit 10+ day share, week before Feb-Mar 2018's late-rate SEV1 start (status stayed 'ok': no warning)",
+  "value": "41.52",
+  "unit": "%",
+  "sql_source": "12b",
+  "pandas_value": "41.52",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N90",
+  "claim": "Cancellation rate, first half of the window (split at the median purchase date)",
+  "value": "1.53",
+  "unit": "%",
+  "sql_source": "15b",
+  "pandas_value": "1.53",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N91",
+  "claim": "Cancellation rate, second half of the window",
+  "value": "0.83",
+  "unit": "%",
+  "sql_source": "15b",
+  "pandas_value": "0.83",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N92",
+  "claim": "Worst single month for cancellations (Feb 2017), months of 500+ orders only",
+  "value": "3.48",
+  "unit": "%",
+  "sql_source": "15c",
+  "pandas_value": "3.48",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N93",
+  "claim": "Normal weeks: median days, purchase to carrier handoff (seller leg)",
+  "value": "2.1",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "2.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N94",
+  "claim": "Normal weeks: median days, handoff to delivery (carrier leg)",
+  "value": "7.0",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "7.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N95",
+  "claim": "Normal weeks: median days, purchase to delivery (total)",
+  "value": "9.8",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "9.8",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N96",
+  "claim": "Black Friday 2017: median seller leg",
+  "value": "3.1",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "3.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N97",
+  "claim": "Black Friday 2017: median carrier leg",
+  "value": "9.8",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "9.8",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N98",
+  "claim": "Black Friday 2017: median total",
+  "value": "13.5",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "13.5",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N99",
+  "claim": "Feb-Mar 2018: median seller leg",
+  "value": "2.4",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "2.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N100",
+  "claim": "Feb-Mar 2018: median carrier leg",
+  "value": "11.1",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "11.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N101",
+  "claim": "Feb-Mar 2018: median total",
+  "value": "14.4",
+  "unit": "days",
+  "sql_source": "16a",
+  "pandas_value": "14.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N102",
+  "claim": "Black Friday 2017: seller leg against normal weeks",
+  "value": "1.0",
+  "unit": "days",
+  "sql_source": "16c",
+  "pandas_value": "1.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N103",
+  "claim": "Black Friday 2017: carrier leg against normal weeks",
+  "value": "2.8",
+  "unit": "days",
+  "sql_source": "16c",
+  "pandas_value": "2.8",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N104",
+  "claim": "Feb-Mar 2018: seller leg against normal weeks (barely moved)",
+  "value": "0.3",
+  "unit": "days",
+  "sql_source": "16c",
+  "pandas_value": "0.3",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N105",
+  "claim": "Feb-Mar 2018: carrier leg against normal weeks",
+  "value": "4.1",
+  "unit": "days",
+  "sql_source": "16c",
+  "pandas_value": "4.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N106",
+  "claim": "Normal weeks: 90th percentile carrier leg",
+  "value": "16.7",
+  "unit": "days",
+  "sql_source": "16b",
+  "pandas_value": "16.7",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N107",
+  "claim": "Feb-Mar 2018: 90th percentile carrier leg",
+  "value": "30.0",
+  "unit": "days",
+  "sql_source": "16b",
+  "pandas_value": "30.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N108",
+  "claim": "Escalation seller: scored orders",
+  "value": "392",
+  "unit": "orders",
+  "sql_source": "17a",
+  "pandas_value": "392",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N109",
+  "claim": "Escalation seller: late handoffs",
+  "value": "123",
+  "unit": "orders",
+  "sql_source": "17a",
+  "pandas_value": "123",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N110",
+  "claim": "Escalation seller: late handoff rate (platform rate is N08)",
+  "value": "31.4",
+  "unit": "%",
+  "sql_source": "17a",
+  "pandas_value": "31.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N111",
+  "claim": "Escalation seller: late delivery rate",
+  "value": "18.9",
+  "unit": "%",
+  "sql_source": "17a",
+  "pandas_value": "18.9",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N112",
+  "claim": "Escalation seller: late deliveries an on-time handoff alone would have saved",
+  "value": "33",
+  "unit": "orders",
+  "sql_source": "17a",
+  "pandas_value": "33",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N113",
+  "claim": "Escalation seller: 1-2 star review rate",
+  "value": "16.8",
+  "unit": "%",
+  "sql_source": "17a",
+  "pandas_value": "16.8",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N114",
+  "claim": "Escalation seller: reviewed orders behind N113",
+  "value": "388",
+  "unit": "orders",
+  "sql_source": "17a",
+  "pandas_value": "388",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N115",
+  "claim": "Rio de Janeiro: median carrier leg, normal weeks",
+  "value": "8.0",
+  "unit": "days",
+  "sql_source": "17c",
+  "pandas_value": "8.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N116",
+  "claim": "Rio de Janeiro: median carrier leg, Feb-Mar 2018",
+  "value": "20.0",
+  "unit": "days",
+  "sql_source": "17c",
+  "pandas_value": "20.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N117",
+  "claim": "Rio de Janeiro: late handoff rate, normal weeks",
+  "value": "8.6",
+  "unit": "%",
+  "sql_source": "17c",
+  "pandas_value": "8.6",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N118",
+  "claim": "Rio de Janeiro: late handoff rate, Feb-Mar 2018 (sellers were not the problem)",
+  "value": "9.6",
+  "unit": "%",
+  "sql_source": "17c",
+  "pandas_value": "9.6",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N119",
+  "claim": "Rio de Janeiro: late orders above its own normal rate, Feb-Mar 2018",
+  "value": "402.0",
+  "unit": "orders",
+  "sql_source": "17e",
+  "pandas_value": "402",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N120",
+  "claim": "Escalation seller: late deliveries with both a late handoff and slow transit (shared cause)",
+  "value": "33",
+  "unit": "orders",
+  "sql_source": "17a",
+  "pandas_value": "33",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N121",
+  "claim": "On-time deliveries after an on-time handoff: 1-2 star rate",
+  "value": "8.9",
+  "unit": "%",
+  "sql_source": "17f",
+  "pandas_value": "8.9",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N122",
+  "claim": "On-time deliveries after a LATE handoff: 1-2 star rate (lateness cannot explain this, they all arrived on time)",
+  "value": "13.5",
+  "unit": "%",
+  "sql_source": "17f",
+  "pandas_value": "13.5",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N123",
+  "claim": "Reviewed on-time deliveries behind N121",
+  "value": "82349",
+  "unit": "orders",
+  "sql_source": "17f",
+  "pandas_value": "82349",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N124",
+  "claim": "Reviewed on-time deliveries behind N122",
+  "value": "6718",
+  "unit": "orders",
+  "sql_source": "17f",
+  "pandas_value": "6718",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N125",
+  "claim": "Average review, on-time delivery after an on-time handoff",
+  "value": "4.31",
+  "unit": "stars",
+  "sql_source": "17f",
+  "pandas_value": "4.31",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N126",
+  "claim": "Average review, on-time delivery after a late handoff",
+  "value": "4.08",
+  "unit": "stars",
+  "sql_source": "17f",
+  "pandas_value": "4.08",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N127",
+  "claim": "Escalation seller: reviewed on-time deliveries that followed a late handoff -- too small to measure a review effect for this seller alone",
+  "value": "55",
+  "unit": "orders",
+  "sql_source": "17g",
+  "pandas_value": "55",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N128",
+  "claim": "Escalation seller: 1-2 star rate on those (N127) orders -- 2 low reviews, reported only to show the sample is too small",
+  "value": "3.6",
+  "unit": "%",
+  "sql_source": "17g",
+  "pandas_value": "3.6",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N129",
+  "claim": "On-time deliveries after an on-time handoff: median days purchase to door",
+  "value": "9.3",
+  "unit": "days",
+  "sql_source": "17h",
+  "pandas_value": "9.3",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N130",
+  "claim": "On-time deliveries after a late handoff: median days purchase to door",
+  "value": "15.1",
+  "unit": "days",
+  "sql_source": "17h",
+  "pandas_value": "15.1",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N131",
+  "claim": "On-time deliveries after an on-time handoff: median days arriving before the deadline",
+  "value": "13.4",
+  "unit": "days",
+  "sql_source": "17h",
+  "pandas_value": "13.4",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N132",
+  "claim": "On-time deliveries after a late handoff: median days arriving before the deadline (less slack left)",
+  "value": "8.5",
+  "unit": "days",
+  "sql_source": "17h",
+  "pandas_value": "8.5",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N133",
+  "claim": "Black Friday 2017 late rate above normal weeks",
+  "value": "10.0",
+  "unit": "pp",
+  "sql_source": "16d",
+  "pandas_value": "10.0",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N134",
+  "claim": "Feb-Mar 2018 late rate above normal weeks",
+  "value": "16.3",
+  "unit": "pp",
+  "sql_source": "16d",
+  "pandas_value": "16.3",
+  "agreement": "MATCH"
+ },
+ {
+  "id": "N135",
+  "claim": "Rio de Janeiro, Feb-Mar 2018: late rate above Rio's own normal rate",
+  "value": "35.6",
+  "unit": "pp",
+  "sql_source": "17i",
+  "pandas_value": "35.6",
+  "agreement": "MATCH"
+ }
+]

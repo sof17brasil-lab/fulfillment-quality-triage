@@ -1,0 +1,136 @@
+id,claim,value,unit,sql_source,pandas_value,agreement
+N01,"Orders analysed (86 complete weeks, 2 Jan 2017 to 26 Aug 2018)",98962,orders,02,98962,MATCH
+N02,Delivered on time,89556,orders,02,89556,MATCH
+N03,Delivered late,6531,orders,02,6531,MATCH
+N04,Cancelled (canceled + unavailable),1168,orders,02,1168,MATCH
+N05,"Stalled (paid, never delivered by the snapshot)",1707,orders,02,1707,MATCH
+N06,Perfect order rate (delivered on time / all orders),90.5,%,02,90.5,MATCH
+N07,Late rate (late / delivered),6.8,%,02,6.8,MATCH
+N08,Late seller handoff rate (after shipping limit / orders with a handoff),8.96,%,02,8.96,MATCH
+N09,Low reviews (1 or 2 stars) on late orders,62.4,%,03a,62.4,MATCH
+N10,Low reviews (1 or 2 stars) on on-time orders,9.2,%,03a,9.2,MATCH
+N11,"Average review, late orders",2.27,stars,03a,2.27,MATCH
+N12,"Average review, on-time orders",4.29,stars,03a,4.29,MATCH
+N13,Low reviews on orders 4 to 7 days late (the cliff),67.7,%,03b,,SQL only
+N14,Low reviews on orders 1 to 3 days late,32.1,%,03b,,SQL only
+N15,Late orders handed off on time (cause: carrier or promise),4719,orders,05b,4719,MATCH
+N16,Late orders an on-time handoff would have saved (cause: seller),809,orders,05b,809,MATCH
+N17,Late orders with late handoff AND slow transit (cause: shared),1002,orders,05b,1002,MATCH
+N18,Share of late orders handed off on time,72.3,%,05b / 02,72.3,MATCH
+N19,Share of late orders caused by the seller alone,12.4,%,05b / 02,12.4,MATCH
+N20,SEV1 weeks flagged by the monitor,8,weeks,04,,SQL only
+N21,Black Friday 2017: late rate,14.7,%,05a,14.7,MATCH
+N22,Black Friday 2017: late handoff rate,14.1,%,05a,14.1,MATCH
+N23,Black Friday 2017: orders per week,2266.0,orders,05a,2266,MATCH
+N24,Feb-Mar 2018: late rate,21.0,%,05a,21.0,MATCH
+N25,Feb-Mar 2018: late handoff rate,9.1,%,05a,9.1,MATCH
+N26,Feb-Mar 2018: share of late orders handed off on time,85.6,%,05b,85.6,MATCH
+N27,Normal weeks: late rate,4.7,%,05a,4.7,MATCH
+N28,Normal weeks: late handoff rate,8.5,%,05a,8.5,MATCH
+N29,Normal weeks: median transit days,7.0,days,05a,,SQL only
+N30,Feb-Mar 2018: median transit days,11.1,days,05a,,SQL only
+N31,"Rio de Janeiro (RJ) late rate, normal weeks",6.6,%,05c,6.6,MATCH
+N32,"Rio de Janeiro (RJ) late rate, Feb-Mar 2018",42.2,%,05c,42.2,MATCH
+N33,"Rio de Janeiro (RJ) late rate, Black Friday 2017",35.7,%,05c,35.7,MATCH
+N34,"RJ share of excess late orders, Feb-Mar 2018",29.8,%,05c,,SQL only
+N35,"RJ share of delivered volume, Feb-Mar 2018",13.6,%,05c,,SQL only
+N36,Share of all late orders that fall in the two SEV1 episodes (8 of 86 weeks),41.5,%,05b / 02,41.5,MATCH
+N37,Median promised delivery time,24.2,days,06a,24.2,MATCH
+N38,Median actual delivery time,10.2,days,06a,10.2,MATCH
+N39,Delivered orders arriving 7+ days before the promise,78.9,%,06a,78.9,MATCH
+N40,Sellers scored (50+ orders with a handoff),425,sellers,07a,425,MATCH
+N41,Sellers flagged (Wilson lower bound above platform rate),89,sellers,07a,89,MATCH
+N42,Flagged sellers' share of scored orders,21.4,%,07a,21.4,MATCH
+N43,Flagged sellers' share of late handoffs,58.2,%,07a,58.2,MATCH
+N44,Late delivery rate after a late handoff,21.1,%,07c,,SQL only
+N45,Late delivery rate after an on-time handoff,5.4,%,07c,,SQL only
+N46,Customers in the window,95657,customers,08a,95657,MATCH
+N47,Customers who ordered more than once,3.1,%,08a,3.1,MATCH
+N48,"Repeat within 180 days, on-time first order",1.87,%,08b,1.87,MATCH
+N49,"Repeat within 180 days, late first order",1.34,%,08b,1.34,MATCH
+N50,"Repeaters behind N49 (late first order, 180 days)",35,customers,08b,35,MATCH
+N51,Relative drop in 180-day repeat rate after a late first order,28.3,%,08b,28.3,MATCH
+N52,p-value for the 180-day difference (two-proportion z-test),0.05,p,08b + check.py,0.05,MATCH
+N53,"Repeat within 90 days, on-time first order",1.18,%,08c,1.18,MATCH
+N54,"Repeat within 90 days, late first order",0.79,%,08c,0.79,MATCH
+N55,"Repeaters behind N54 (late first order, 90 days)",41,customers,08c,41,MATCH
+N56,Relative drop in 90-day repeat rate after a late first order,33.2,%,08c,33.2,MATCH
+N57,p-value for the 90-day difference (two-proportion z-test),0.011,p,08c + check.py,0.011,MATCH
+N58,"Late repeat rate vs matched on-time rate, same state and month (180 days)",1.34 vs 1.76,% vs %,08e,,SQL only
+N59,"Repeat within 180 days, first order 1 to 3 days late (12 repeaters)",1.52,%,08d,,SQL only
+N60,"Repeat within 180 days, first order 4 to 7 days late (10 repeaters)",1.4,%,08d,,SQL only
+N61,"Repeat within 180 days, first order 8+ days late (13 repeaters)",1.17,%,08d,,SQL only
+N62,Seller handoff program: late orders avoided,231.0,orders,10a,231,MATCH
+N63,Seller handoff program: low reviews avoided,127.0,orders,10a,127,MATCH
+N64,"Episode response, Black Friday 2017 (planned ahead, counted in full): late orders avoided (promise +7 days)",505,orders,10b,505,MATCH
+N65,"Episode response, Black Friday 2017: late orders avoided (promise +3 days)",269,orders,10b,269,MATCH
+N66,"Episode response, Black Friday 2017: low reviews avoided",255,orders,10b,255,MATCH
+N67,"Episode response, Feb-Mar 2018 (orders purchased after the real detection delay only): late orders avoided (promise +7 days)",277,orders,10b,277,MATCH
+N68,"Episode response, Feb-Mar 2018 (detection delay applied): late orders avoided (promise +3 days)",125,orders,10b,125,MATCH
+N69,"Episode response, Feb-Mar 2018 (detection delay applied): low reviews avoided",152,orders,10b,152,MATCH
+N70,"Episode response: late orders avoided, both parts combined (promise +7 days)",782,orders,10b,782,MATCH
+N71,"Episode response: low reviews avoided, both parts combined",407,orders,10b,407,MATCH
+N72,"Lane-level promise, Black Friday 2017 (states picked from data before 20 Nov 2017, counted in full): late orders avoided (promise +7 days)",73,orders,10c,73,MATCH
+N73,"Lane-level promise, Black Friday 2017: late orders avoided (promise +3 days)",36,orders,10c,36,MATCH
+N74,"Lane-level promise, Black Friday 2017: low reviews avoided",35,orders,10c,35,MATCH
+N75,"Lane-level promise, Feb-Mar 2018 (states picked from data before 12 Feb 2018; detection delay applied): late orders avoided (promise +7 days)",69,orders,10c,69,MATCH
+N76,"Lane-level promise, Feb-Mar 2018 (detection delay applied): late orders avoided (promise +3 days)",24,orders,10c,24,MATCH
+N77,"Lane-level promise, Feb-Mar 2018 (detection delay applied): low reviews avoided",41,orders,10c,41,MATCH
+N78,"Lane-level promise: late orders avoided, both parts combined (promise +7 days)",142,orders,10c,142,MATCH
+N79,"Lane-level promise: low reviews avoided, both parts combined",76,orders,10c,76,MATCH
+N80,"New-seller cancel rate, first 30 days (first look, not calendar-controlled)",0.97,%,11a,0.97,MATCH
+N81,"New-seller cancel rate, after day 90 (first look, not calendar-controlled)",0.37,%,11a,0.37,MATCH
+N82,"New-seller orders behind N84 (first 30 days, matched calendar months)",7466,orders,11c,7466,MATCH
+N83,New-seller cancelled orders behind N84,67,orders,11c,67,MATCH
+N84,"New-seller cancel rate, first 30 days, matched to the same calendar month as the comparison",0.9,%,11c,0.9,MATCH
+N85,"Veteran-seller (after day 90) orders behind N87, same matched calendar months",39516,orders,11c,39516,MATCH
+N86,Veteran-seller cancelled orders behind N87,148,orders,11c,148,MATCH
+N87,"Veteran-seller (after day 90) cancel rate, weighted to match new sellers' calendar months -- NOT N86/N85, which is a smaller unweighted rate (0.37%)",0.39,%,11c,0.39,MATCH
+N88,"Transit 10+ day share, week before Black Friday 2017's late-rate SEV1 start (status stayed 'ok': no warning)",35.14,%,12b,35.14,MATCH
+N89,"Transit 10+ day share, week before Feb-Mar 2018's late-rate SEV1 start (status stayed 'ok': no warning)",41.52,%,12b,41.52,MATCH
+N90,"Cancellation rate, first half of the window (split at the median purchase date)",1.53,%,15b,1.53,MATCH
+N91,"Cancellation rate, second half of the window",0.83,%,15b,0.83,MATCH
+N92,"Worst single month for cancellations (Feb 2017), months of 500+ orders only",3.48,%,15c,3.48,MATCH
+N93,"Normal weeks: median days, purchase to carrier handoff (seller leg)",2.1,days,16a,2.1,MATCH
+N94,"Normal weeks: median days, handoff to delivery (carrier leg)",7.0,days,16a,7.0,MATCH
+N95,"Normal weeks: median days, purchase to delivery (total)",9.8,days,16a,9.8,MATCH
+N96,Black Friday 2017: median seller leg,3.1,days,16a,3.1,MATCH
+N97,Black Friday 2017: median carrier leg,9.8,days,16a,9.8,MATCH
+N98,Black Friday 2017: median total,13.5,days,16a,13.5,MATCH
+N99,Feb-Mar 2018: median seller leg,2.4,days,16a,2.4,MATCH
+N100,Feb-Mar 2018: median carrier leg,11.1,days,16a,11.1,MATCH
+N101,Feb-Mar 2018: median total,14.4,days,16a,14.4,MATCH
+N102,Black Friday 2017: seller leg against normal weeks,1.0,days,16c,1.0,MATCH
+N103,Black Friday 2017: carrier leg against normal weeks,2.8,days,16c,2.8,MATCH
+N104,Feb-Mar 2018: seller leg against normal weeks (barely moved),0.3,days,16c,0.3,MATCH
+N105,Feb-Mar 2018: carrier leg against normal weeks,4.1,days,16c,4.1,MATCH
+N106,Normal weeks: 90th percentile carrier leg,16.7,days,16b,16.7,MATCH
+N107,Feb-Mar 2018: 90th percentile carrier leg,30.0,days,16b,30.0,MATCH
+N108,Escalation seller: scored orders,392,orders,17a,392,MATCH
+N109,Escalation seller: late handoffs,123,orders,17a,123,MATCH
+N110,Escalation seller: late handoff rate (platform rate is N08),31.4,%,17a,31.4,MATCH
+N111,Escalation seller: late delivery rate,18.9,%,17a,18.9,MATCH
+N112,Escalation seller: late deliveries an on-time handoff alone would have saved,33,orders,17a,33,MATCH
+N113,Escalation seller: 1-2 star review rate,16.8,%,17a,16.8,MATCH
+N114,Escalation seller: reviewed orders behind N113,388,orders,17a,388,MATCH
+N115,"Rio de Janeiro: median carrier leg, normal weeks",8.0,days,17c,8.0,MATCH
+N116,"Rio de Janeiro: median carrier leg, Feb-Mar 2018",20.0,days,17c,20.0,MATCH
+N117,"Rio de Janeiro: late handoff rate, normal weeks",8.6,%,17c,8.6,MATCH
+N118,"Rio de Janeiro: late handoff rate, Feb-Mar 2018 (sellers were not the problem)",9.6,%,17c,9.6,MATCH
+N119,"Rio de Janeiro: late orders above its own normal rate, Feb-Mar 2018",402.0,orders,17e,402,MATCH
+N120,Escalation seller: late deliveries with both a late handoff and slow transit (shared cause),33,orders,17a,33,MATCH
+N121,On-time deliveries after an on-time handoff: 1-2 star rate,8.9,%,17f,8.9,MATCH
+N122,"On-time deliveries after a LATE handoff: 1-2 star rate (lateness cannot explain this, they all arrived on time)",13.5,%,17f,13.5,MATCH
+N123,Reviewed on-time deliveries behind N121,82349,orders,17f,82349,MATCH
+N124,Reviewed on-time deliveries behind N122,6718,orders,17f,6718,MATCH
+N125,"Average review, on-time delivery after an on-time handoff",4.31,stars,17f,4.31,MATCH
+N126,"Average review, on-time delivery after a late handoff",4.08,stars,17f,4.08,MATCH
+N127,Escalation seller: reviewed on-time deliveries that followed a late handoff -- too small to measure a review effect for this seller alone,55,orders,17g,55,MATCH
+N128,"Escalation seller: 1-2 star rate on those (N127) orders -- 2 low reviews, reported only to show the sample is too small",3.6,%,17g,3.6,MATCH
+N129,On-time deliveries after an on-time handoff: median days purchase to door,9.3,days,17h,9.3,MATCH
+N130,On-time deliveries after a late handoff: median days purchase to door,15.1,days,17h,15.1,MATCH
+N131,On-time deliveries after an on-time handoff: median days arriving before the deadline,13.4,days,17h,13.4,MATCH
+N132,On-time deliveries after a late handoff: median days arriving before the deadline (less slack left),8.5,days,17h,8.5,MATCH
+N133,Black Friday 2017 late rate above normal weeks,10.0,pp,16d,10.0,MATCH
+N134,Feb-Mar 2018 late rate above normal weeks,16.3,pp,16d,16.3,MATCH
+N135,"Rio de Janeiro, Feb-Mar 2018: late rate above Rio's own normal rate",35.6,pp,17i,35.6,MATCH

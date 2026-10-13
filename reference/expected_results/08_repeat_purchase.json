@@ -1,0 +1,75 @@
+[
+ [
+  {
+   "customers": 95657,
+   "ordered_more_than_once_pct": 3.1
+  }
+ ],
+ [
+  {
+   "first_order": "On-time first order",
+   "customers": 48791,
+   "repeaters": 912,
+   "repeat_pct": 1.87
+  },
+  {
+   "first_order": "Late first order",
+   "customers": 2612,
+   "repeaters": 35,
+   "repeat_pct": 1.34
+  }
+ ],
+ [
+  {
+   "first_order": "On-time first order",
+   "customers": 67350,
+   "repeaters": 797,
+   "repeat_pct": 1.18
+  },
+  {
+   "first_order": "Late first order",
+   "customers": 5185,
+   "repeaters": 41,
+   "repeat_pct": 0.79
+  }
+ ],
+ [
+  {
+   "lateness": "0 On time",
+   "sort_key": -140,
+   "customers": 48791,
+   "repeaters": 912,
+   "repeat_pct": 1.87
+  },
+  {
+   "lateness": "1 to 3 days late",
+   "sort_key": 1,
+   "customers": 787,
+   "repeaters": 12,
+   "repeat_pct": 1.52
+  },
+  {
+   "lateness": "4 to 7 days late",
+   "sort_key": 4,
+   "customers": 712,
+   "repeaters": 10,
+   "repeat_pct": 1.4
+  },
+  {
+   "lateness": "8+ days late",
+   "sort_key": 8,
+   "customers": 1113,
+   "repeaters": 13,
+   "repeat_pct": 1.17
+  }
+ ],
+ [
+  {
+   "late_customers": 2394,
+   "late_repeaters_actual": 32,
+   "late_repeaters_expected_if_on_time": 42.0,
+   "late_repeat_pct": 1.34,
+   "matched_on_time_repeat_pct": 1.76
+  }
+ ]
+]

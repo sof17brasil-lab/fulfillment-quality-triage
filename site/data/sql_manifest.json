@@ -1,0 +1,19 @@
+[
+ "01_base_model.sql",
+ "02_baseline_scorecard.sql",
+ "03_customer_impact.sql",
+ "04_weekly_monitoring.sql",
+ "05_root_cause.sql",
+ "06_promise_accuracy.sql",
+ "07_seller_scorecard.sql",
+ "08_repeat_purchase.sql",
+ "09_validation_checks.sql",
+ "10_initiative_sizing.sql",
+ "11_launch_scorecard.sql",
+ "12_early_warning.sql",
+ "13_dashboard_cube.sql",
+ "14_customer_reviews.sql",
+ "15_cancellation_trend.sql",
+ "16_order_timeline.sql",
+ "17_escalation.sql"
+]

@@ -1,0 +1,69 @@
+[
+ [
+  {
+   "outcome": "delivered_on_time",
+   "orders": 89556,
+   "reviewed": 89067,
+   "avg_review": 4.29,
+   "low_review_pct": 9.2
+  },
+  {
+   "outcome": "delivered_late",
+   "orders": 6531,
+   "reviewed": 6378,
+   "avg_review": 2.27,
+   "low_review_pct": 62.4
+  },
+  {
+   "outcome": "stalled",
+   "orders": 1707,
+   "reviewed": 1621,
+   "avg_review": 1.82,
+   "low_review_pct": 75.8
+  },
+  {
+   "outcome": "cancelled",
+   "orders": 1168,
+   "reviewed": 1135,
+   "avg_review": 1.66,
+   "low_review_pct": 80.8
+  }
+ ],
+ [
+  {
+   "lateness": "0 On time",
+   "sort_key": -147,
+   "orders": 89556,
+   "avg_review": 4.29,
+   "low_review_pct": 9.2
+  },
+  {
+   "lateness": "1 to 3 days late",
+   "sort_key": 1,
+   "orders": 1869,
+   "avg_review": 3.29,
+   "low_review_pct": 32.1
+  },
+  {
+   "lateness": "4 to 7 days late",
+   "sort_key": 4,
+   "orders": 1802,
+   "avg_review": 2.1,
+   "low_review_pct": 67.7
+  },
+  {
+   "lateness": "8 to 14 days late",
+   "sort_key": 8,
+   "orders": 1478,
+   "avg_review": 1.67,
+   "low_review_pct": 80.2
+  },
+  {
+   "lateness": "15+ days late",
+   "sort_key": 15,
+   "orders": 1382,
+   "avg_review": 1.72,
+   "low_review_pct": 78.3
+  }
+ ]
+]

@@ -1,0 +1,1080 @@
+/* ============================================================
+   Fulfillment Quality Triage — Sofia Mota
+   Visual system modelled on the reference site studied in
+   design/inspiration/. Fonts are free substitutes:
+     Inter Tight  — body + headline (SIL OFL)
+     Fjalla One   — condensed display (SIL OFL), standing in for
+                    the reference site's licensed Peperoncino Sans
+   ============================================================ */
+
+/* ---------- fonts ---------- */
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../fonts/inter-tight-var-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../fonts/inter-tight-var-latin-ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Fjalla One';
+  src: url('../fonts/fjalla-one-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fjalla One';
+  src: url('../fonts/fjalla-one-400-latin-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ---------- tokens ---------- */
+:root {
+  /* shell palette, sampled from the reference site */
+  --ink:        #100B06;  /* page background      */
+  --cream:      #F5E4C7;  /* primary text / fills */
+  --gold:       #BE8D3F;  /* muted accent, labels */
+  --card:       #322C23;  /* raised surface       */
+  --ember:      #F15726;  /* hot accent           */
+  --ember-soft: #EF8F4A;
+  --crimson:    #DA1F27;
+
+  /* data encoding (kept distinct from the shell palette) */
+  --ok:    #3FA66A;
+  --warn:  #EF8F4A;
+  --bad:   #DA1F27;
+
+  --cream-12: rgba(245, 228, 199, 0.12);
+  --cream-20: rgba(245, 228, 199, 0.20);
+  --cream-55: rgba(245, 228, 199, 0.55);
+  --cream-70: rgba(245, 228, 199, 0.70);
+
+  --display: 'Fjalla One', 'Arial Narrow', sans-serif;
+  --body: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+
+  --gutter: 1.25rem;   /* 18px on the 1440 artboard */
+  --radius: 0.5rem;
+}
+
+/* The reference site scales every dimension from a 1440px artboard, so the
+   whole layout grows and shrinks as one piece. 1440 / 16 = 90. */
+html {
+  font-size: calc(100vw / 90);
+  -webkit-text-size-adjust: 100%;
+}
+@media (min-width: 1800px) { html { font-size: 20px; } }   /* stop growing   */
+@media (max-width: 900px)  { html { font-size: 16px; } }   /* stop shrinking */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* `overflow-x: hidden` on <body> turns body into its own scroll box, which
+   moves scroll events off window and breaks anything listening there.
+   `clip` on the root contains the hero's bleeding produce without creating a
+   scroll container at all. */
+html { overflow-x: clip; }
+
+::selection { background: var(--ember); color: var(--ink); }
+
+a { color: inherit; }
+
+/* ---------- shared primitives ---------- */
+.shell {
+  width: 100%;
+  padding-inline: var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* Cream pill button, as on the reference site's header */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.375rem;
+  padding-inline: 1.75rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 160ms ease, color 160ms ease;
+}
+.btn:hover { background: var(--ember); color: var(--cream); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--cream-20);
+  width: 3.375rem;
+  padding-inline: 0;
+}
+.btn--ghost:hover { background: var(--cream); color: var(--ink); }
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-head {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem var(--gutter);
+}
+
+/* A wheat/stalk monogram — my own mark, not the reference site's */
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+}
+.mark svg { width: 2.75rem; height: 2.75rem; display: block; }
+.mark__txt {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  line-height: 1.15;
+  color: var(--cream-70);
+}
+.mark__txt b { display: block; color: var(--cream); font-weight: 400; }
+
+.head-actions { display: flex; align-items: center; gap: 0.5rem; }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* reference sits the headline high, not centred */
+  overflow: hidden;
+  padding: 5.5rem var(--gutter) 3rem;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 58rem;              /* ~928px on the 1440 artboard */
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--body);
+  font-weight: 440;
+  font-size: 4rem;               /* 64px on the 1440 artboard */
+  line-height: 1.0;              /* reference sets big glyphs on tight leading */
+  letter-spacing: -0.025em;
+  color: var(--cream);
+  text-wrap: balance;
+}
+
+/* the inline splat that sits between sentences, as in the reference hero */
+.splat {
+  display: inline-block;
+  width: 0.78em;
+  height: 0.78em;
+  vertical-align: -0.06em;
+  margin-inline: 0.12em;
+}
+
+.hero__sub {
+  margin: 2.25rem auto 0;
+  max-width: 34rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--cream-70);
+}
+.hero__sub b {
+  color: var(--cream);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* pull-quote with its source, sitting under the headline */
+.hero__quote {
+  margin: 2.25rem auto 0;
+  max-width: 30rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cream-12);
+}
+.hero__quote p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--cream-70);
+}
+.hero__quote q { color: var(--cream); font-style: italic; }
+.hero__quote cite {
+  display: block;
+  margin-top: 0.625rem;
+  font-family: var(--display);
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+
+/* byline + scroll cue pinned to the bottom of the first screen */
+.hero__foot {
+  position: absolute;
+  inset: auto 0 1.75rem;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-inline: var(--gutter);
+}
+.byline {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  color: var(--cream-55);
+  margin: 0;
+}
+.byline b { display: block; color: var(--cream); font-weight: 400; }
+
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  color: var(--cream-55);
+}
+.scroll-cue__rail {
+  position: relative;
+  width: 1px;
+  height: 2.5rem;
+  background: var(--cream-20);
+  overflow: hidden;
+}
+.scroll-cue__rail::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 45%;
+  background: var(--cream);
+  animation: cue 2.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes cue {
+  0%   { transform: translateY(-105%); }
+  100% { transform: translateY(240%); }
+}
+
+/* ---------- hero headline: word-by-word ----------
+   The <em> carries no italics; it marks the accent phrase semantically and
+   the words inside it inherit the ember colour. */
+.hero__h1 em { font-style: normal; color: var(--ember-soft); }
+
+.hero__h1 .w { display: inline-block; }
+
+/* Only the run state hides anything, and only after JS has wrapped the words.
+   Without JS the headline renders as ordinary text at full opacity. */
+.hero__h1.words-run .w {
+  opacity: 0;
+  transform: translate3d(0, 0.5em, 0);
+}
+.hero__h1.words-run.words-ready .w {
+  opacity: 1;
+  transform: none;
+  transition: opacity 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--wd, 0ms),
+              transform 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--wd, 0ms);
+}
+
+/* ---------- drifting produce ---------- */
+.produce {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  /* settle the photos into the warm dark page so they read as set dressing,
+     never competing with the numbers */
+  filter: saturate(0.95) brightness(0.94);
+}
+/* The slot owns position and the entrance. Keeping the two transforms on
+   separate elements means the slow rotation never has to know about the
+   entrance, and neither resets the other. */
+.produce__slot {
+  position: absolute;
+  display: block;
+  width: var(--w);
+  left: var(--x);
+  top: var(--y);
+  opacity: 0;
+  transform: translate3d(0, 1.5rem, 0);
+  animation: produce-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes produce-in {
+  to { opacity: var(--o, 1); transform: translate3d(0, 0, 0); }
+}
+
+/* One slow clockwise turn. Never faster than 30s, so it reads as drift
+   rather than motion, and it is the only thing on the page that loops. */
+.produce__slot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: produce-spin var(--spin, 40s) linear infinite;
+}
+@keyframes produce-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ============================================================
+   Sections
+   ============================================================ */
+.band { position: relative; padding: 5rem 0 4.25rem; }
+.band + .band { border-top: 1px solid var(--cream-12); }
+
+.band__h {
+  margin: 0.5rem 0 0;
+  max-width: 24ch;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--cream);
+  text-wrap: balance;
+}
+.band__h b { font-weight: 500; font-variant-numeric: tabular-nums; }
+
+.band__sub {
+  margin: 0.875rem 0 0;
+  max-width: 48ch;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  color: var(--cream-70);
+}
+
+.grid { display: grid; gap: 1.25rem; margin-top: 2.25rem; }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.band .card + .grid, .band .grid + .grid { margin-top: 1.25rem; }
+.band .card.rise { margin-top: 2.25rem; }
+
+/* ---------- card: cream plaque over a dark outlined box ---------- */
+.card { display: flex; flex-direction: column; min-width: 0; }
+
+/* Deliberately not a flex container: a flex parent strips the whitespace
+   between a text node and an inline <span>, which turned
+   "Seller 06a2c3af" into "Seller06a2c3af" once the id was injected. */
+.tag {
+  margin: 0;
+  display: block;
+  padding: 0.9375rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.0625rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  text-wrap: balance;
+}
+.tag--amber { background: var(--ember-soft); }
+.tag--red   { background: var(--crimson); color: var(--cream); }
+
+.card__body {
+  flex: 1;
+  margin-top: -0.25rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border: 1px solid var(--cream-20);
+  border-radius: var(--radius);
+}
+.card__body--flush { padding: 0.25rem 0 0; }
+
+/* ---------- captions ---------- */
+.note {
+  margin: 1.125rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--cream-70);
+  text-wrap: pretty;
+}
+.note b { color: var(--cream); font-weight: 600; font-variant-numeric: tabular-nums; }
+.note strong { color: var(--cream); font-weight: 600; }
+.note--lead { margin: 0 0 1.25rem; }
+
+/* ---------- KPI row ---------- */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.kpis li {
+  padding: 1.125rem 1rem;
+  border: 1px solid var(--cream-12);
+  border-radius: var(--radius);
+  background: rgba(50, 44, 35, 0.35);
+}
+.kpi__v {
+  display: block;
+  font-family: var(--display);
+  font-size: 2.625rem;
+  line-height: 1;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+.kpi__l {
+  display: block;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: var(--cream-70);
+}
+.kpi__l em {
+  display: block;
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: var(--cream-55);
+}
+.kpi__l b { color: var(--cream-70); font-weight: 600; }
+
+/* ---------- stat cards ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.125rem;
+  border: 1px solid var(--cream-12);
+  border-radius: var(--radius);
+  background: rgba(50, 44, 35, 0.32);
+  transition: border-color 200ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stat:hover { border-color: var(--cream-20); transform: translateY(-2px); }
+
+.stat__v {
+  font-family: var(--display);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+.stat__l {
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  color: var(--cream-70);
+}
+.stat__c {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--cream-12);
+  font-size: 0.875rem;
+  color: var(--cream-55);
+  flex-wrap: wrap;
+}
+.stat__c svg { width: 1rem; height: 1rem; flex: none; }
+.stat__c b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat__c em { font-style: normal; }
+
+/* Direction is the arrow; tone is the colour. They are separate because a
+   number going up is not automatically good news. */
+.stat[data-tone="bad"]  .stat__c svg,
+.stat[data-tone="bad"]  .stat__c b { color: var(--ember); }
+.stat[data-tone="good"] .stat__c svg,
+.stat[data-tone="good"] .stat__c b { color: var(--ok); }
+
+/* ---------- charts ---------- */
+.chart { position: relative; height: 16rem; }
+.chart--sm   { height: 11rem; }
+.chart--tall { height: 21rem; }
+.chart canvas { display: block; width: 100% !important; height: 100% !important; }
+
+/* ---------- waffle ---------- */
+.waffle {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 1.125rem;
+}
+.waffle i {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: var(--c, var(--cream-20));
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--cream-70);
+}
+.legend li { display: flex; align-items: center; gap: 0.4375rem; }
+.legend i {
+  width: 0.75rem; height: 0.75rem; border-radius: 2px;
+  background: var(--c); flex: none;
+}
+.legend b { color: var(--cream); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ---------- public-scale strip ---------- */
+.scale { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--cream-12); }
+.scale__h {
+  margin: 0;
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.scale__list {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 2.75rem;
+  margin: 1rem 0 0; padding: 0; list-style: none;
+}
+.scale__list li { display: flex; align-items: baseline; gap: 0.5rem; }
+.scale__v {
+  font-family: var(--display); font-size: 1.5rem; line-height: 1;
+  color: var(--cream); font-variant-numeric: tabular-nums;
+}
+.scale__l { font-size: 0.875rem; color: var(--cream-70); }
+
+/* ---------- escalation cases ---------- */
+.case { display: flex; flex-direction: column; min-width: 0; }
+.case__body {
+  flex: 1;
+  margin-top: -0.25rem;
+  padding: 1.5rem 1.375rem 1.25rem;
+  border: 1px solid var(--cream-20);
+  border-radius: var(--radius);
+}
+.beats { margin: 0 0 1.5rem; }
+.beats dt {
+  margin-top: 1.125rem;
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.beats dt:first-child { margin-top: 0; }
+.beats dd {
+  margin: 0.375rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--cream-70);
+}
+.beats dd b { color: var(--cream); font-weight: 600; font-variant-numeric: tabular-nums; }
+.beats dd strong { color: var(--ember-soft); font-weight: 600; }
+.beats dd em { font-style: italic; color: var(--cream); }
+
+/* ---------- fix list ---------- */
+.fixlist { margin: 1.25rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.75rem; }
+.fixlist li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--cream-12);
+  border-radius: var(--radius);
+}
+.fixlist .fx__r {
+  font-family: var(--display); font-size: 1.25rem; color: var(--gold);
+}
+.fixlist .fx__n { color: var(--cream); font-size: 1.0625rem; }
+.fixlist .fx__n em {
+  display: block; font-style: normal; margin-top: 0.3125rem;
+  font-size: 0.875rem; color: var(--cream-70);
+}
+.fixlist .fx__v {
+  font-family: var(--display); font-size: 1.75rem; color: var(--cream);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.fixlist .fx__v em {
+  display: block; font-style: normal; font-family: var(--body);
+  font-size: 0.8125rem; color: var(--cream-70); text-align: right;
+}
+
+/* ---------- calculator ---------- */
+.calc__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.calc__grid label {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  font-size: 0.875rem; color: var(--cream-70);
+}
+.calc__grid input {
+  font: inherit;
+  font-size: 1.0625rem;
+  font-variant-numeric: tabular-nums;
+  padding: 0.6875rem 0.875rem;
+  color: var(--cream);
+  background: rgba(50, 44, 35, 0.5);
+  border: 1px solid var(--cream-20);
+  border-radius: var(--radius);
+}
+.calc__grid input:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.calc__grid input::placeholder { color: var(--cream-55); }
+.calc__out {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--cream-12);
+}
+.calc__v {
+  display: block; font-family: var(--display); font-size: 2.25rem; line-height: 1;
+  color: var(--cream); font-variant-numeric: tabular-nums;
+}
+.calc__l { display: block; margin-top: 0.5rem; font-size: 0.875rem; color: var(--cream-70); }
+
+/* ---------- the plan ---------- */
+.plan { margin: 2.25rem 0 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+.plan li {
+  display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.25rem;
+  padding: 1.5rem 1.375rem;
+  border: 1px solid var(--cream-12);
+  border-radius: var(--radius);
+}
+.plan__n {
+  font-family: var(--display); font-size: 2rem; line-height: 1; color: var(--gold);
+}
+.plan h3 {
+  margin: 0; font-size: 1.1875rem; font-weight: 500; color: var(--cream);
+  letter-spacing: -0.01em;
+}
+.plan h3 b { font-weight: 500; font-variant-numeric: tabular-nums; }
+.plan li > div > p {
+  margin: 0.5rem 0 0; font-size: 0.9375rem; line-height: 1.5; color: var(--cream-70);
+}
+.plan li > div > p b { color: var(--cream); font-weight: 600; font-variant-numeric: tabular-nums; }
+.plan__meta {
+  display: flex; flex-wrap: wrap; gap: 0.375rem 1.75rem; margin: 1rem 0 0;
+  font-size: 0.875rem;
+}
+.plan__meta dt {
+  font-family: var(--display); text-transform: uppercase; font-size: 0.6875rem;
+  letter-spacing: 0.12em; color: var(--gold); align-self: center;
+}
+.plan__meta dd { margin: 0 1.25rem 0 0.5rem; color: var(--cream-70); }
+
+/* ---------- deck download ---------- */
+.deck {
+  display: inline-flex; align-items: center; gap: 1rem;
+  margin-top: 1.75rem; padding: 1.125rem 1.5rem;
+  border: 1px solid var(--cream-20); border-radius: var(--radius);
+  color: var(--cream); text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+.deck:hover { background: rgba(50, 44, 35, 0.6); border-color: var(--cream-55); }
+.deck__i { display: flex; width: 1.5rem; color: var(--gold); }
+.deck__i svg { width: 100%; height: auto; }
+.deck b { display: block; font-weight: 500; font-size: 1.0625rem; }
+.deck em { display: block; font-style: normal; margin-top: 0.1875rem; font-size: 0.875rem; color: var(--cream-70); }
+
+/* ---------- table ---------- */
+.tablewrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.table th, .table td {
+  padding: 0.6875rem 0.875rem;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--cream-12);
+}
+.table th.is-text, .table td.is-text { text-align: left; }
+.table thead th {
+  position: sticky; top: 0;
+  background: var(--ink);
+  font-family: var(--display); font-weight: 400;
+  text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;
+  color: var(--gold); cursor: pointer; user-select: none;
+}
+.table thead th:hover { color: var(--cream); }
+.table thead th[aria-sort]::after { content: ' ▾'; }
+.table thead th[aria-sort="ascending"]::after { content: ' ▴'; }
+.table tbody td { color: var(--cream-70); font-variant-numeric: tabular-nums; }
+.table tbody td.is-text { color: var(--cream); }
+.table tbody tr:hover td { background: rgba(50, 44, 35, 0.4); }
+.bar {
+  position: relative; display: block; height: 0.375rem; margin-top: 0.3125rem;
+  background: var(--cream-12); border-radius: 2px; overflow: hidden;
+}
+.bar i { position: absolute; inset: 0 auto 0 0; background: var(--ember); border-radius: 2px; }
+
+/* ---------- footer ---------- */
+.site-foot { padding: 2.5rem 0 3rem; border-top: 1px solid var(--cream-12); }
+.foot__grid {
+  display: flex; flex-wrap: wrap; gap: 1rem 3rem; justify-content: space-between;
+}
+.site-foot p {
+  margin: 0; max-width: 58ch;
+  font-size: 0.875rem; line-height: 1.5; color: var(--cream-70);
+}
+.site-foot b { color: var(--cream); font-weight: 600; }
+.site-foot a { color: var(--gold); }
+
+/* ---------- reveal on scroll ---------- */
+/* Reveal is opacity + transform only, so it stays on the compositor.
+   No will-change: promoting 20 layers for the whole session costs more in
+   memory and paint than it saves, and it is what made scrolling stutter. */
+/* Content is visible by default and only hidden once JS has confirmed it can
+   reveal it again (html.js is set synchronously before first paint). If the
+   script fails to load or throws, the page stays fully readable. */
+.rise { opacity: 1; }
+.js .rise {
+  opacity: 0;
+  transform: translate3d(0, 1.25rem, 0);
+  transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--rise-delay, 0ms);
+}
+.js .rise.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* must out-specify `.js .rise`, or reduced-motion users keep the hidden
+     state and never see the content at all */
+  .js .rise, .js .rise.is-in { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* no entrance drift, and the slow turn stops entirely */
+  .produce__slot { opacity: var(--o, 1); transform: none; }
+  .produce__slot img { animation: none !important; }
+}
+
+/* ============================================================
+   Small screens
+   ============================================================ */
+@media (max-width: 1100px) {
+  .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi__v { font-size: 2.25rem; }
+  .band__h { font-size: 2.125rem; }
+}
+
+@media (max-width: 900px) {
+  .hero { padding-top: 5.5rem; min-height: 100svh; }
+  .hero h1 { font-size: 2.25rem; line-height: 1.06; letter-spacing: -0.02em; }
+  .hero__sub { font-size: 1rem; margin-top: 1.5rem; }
+  .hero__quote { margin-top: 2rem; max-width: none; }
+  .mark__txt { display: none; }
+  .hero__foot { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .scroll-cue { display: none; }
+
+  .band { padding: 3.5rem 0 3rem; }
+  .grid--2 { grid-template-columns: 1fr; }
+  .calc__grid { grid-template-columns: 1fr; }
+  .plan li { grid-template-columns: 2.5rem 1fr; gap: 1rem; padding: 1.25rem 1rem; }
+  .fixlist li { grid-template-columns: 2rem 1fr; }
+  .fixlist .fx__v { grid-column: 2; }
+  .fixlist .fx__v em { text-align: left; }
+
+  /* A phone has no room beside the headline, so three of the five go and the
+     survivors move to the bottom corners, behind the byline rather than the
+     text. This is a different composition, not a scaled-down one. */
+  .produce__slot { display: none; width: calc(var(--w) * 0.6); }
+  .produce__slot:nth-of-type(1) {
+    display: block; --x: -14% !important; --y: 74% !important; --o: .4 !important;
+  }
+  .produce__slot:nth-of-type(2) {
+    display: block; --x: 68% !important; --y: 83% !important; --o: .4 !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+  .stats { grid-template-columns: 1fr; gap: 0.75rem; }
+  .stat__v { font-size: 2.125rem; }
+  .kpi__v { font-size: 2rem; }
+  .band__h { font-size: 1.875rem; }
+  .tag { font-size: 0.9375rem; min-height: 2.75rem; padding-inline: 1rem; }
+  .card__body, .case__body { padding: 1.25rem 1rem 1.125rem; }
+  .chart { height: 14rem; }
+  .chart--tall { height: 17rem; }
+  .waffle { grid-template-columns: repeat(10, 1fr); }
+  .calc__out { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .kpis { grid-template-columns: 1fr; }
+}
+
+/* unit suffix beside a stat value, so a bare number never floats without one */
+.stat__top { display: flex; align-items: baseline; gap: 0.375rem; }
+.stat__u {
+  font-family: var(--display);
+  font-size: 1.125rem;
+  color: var(--cream-55);
+}
+/* keeps the change row flush to the bottom of every card, so the rules line
+   up across the row no matter how long a label wraps */
+.stat__c { margin-top: auto; }
+
+/* ============================================================
+   Stacking findings
+   Native position:sticky. Each card sticks slightly lower than the one
+   before, so the stack builds visibly and you can always see the edge of
+   what is underneath. No scroll library, no pinning, no reflow cost.
+   ============================================================ */
+.stack {
+  position: relative;
+  padding: 2.5rem var(--gutter) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.stack__item {
+  position: sticky;
+  /* The step must clear a full tag (min-height 3rem), or each stacked
+     header would be clipped by the card landing on top of it. The stack of
+     titles then reads like a card index you can still scan. */
+  top: calc(3.5rem + var(--i) * 3.25rem);
+  margin-inline: auto;
+  width: 100%;
+  max-width: 68rem;
+}
+
+/* The card must be opaque, or the one beneath shows straight through it. */
+.stack__item .card__body {
+  background: #16100A;
+  border-color: var(--cream-20);
+  box-shadow: 0 -1px 0 0 var(--cream-12), 0 -24px 40px -24px rgba(0, 0, 0, 0.9);
+}
+.stack__item .tag { position: relative; z-index: 1; }
+
+/* The last card gets room beneath it so the stack can finish unstacking
+   before the next section arrives. */
+.stack__item:last-child { margin-bottom: 4rem; }
+
+@media (max-width: 900px) {
+  /* On a phone the cards are nearly viewport-height, so stacking them would
+     bury the content. They become a plain vertical list instead -- a
+     different decision for a different screen, not a squeezed desktop. */
+  .stack { gap: 1.25rem; padding-top: 1.5rem; }
+  .stack__item { position: static; top: auto; }
+  .stack__item .card__body { box-shadow: none; }
+  .stack__item:last-child { margin-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack__item { position: static; top: auto; }
+}
+
+/* ============================================================
+   Micro-interactions
+   Each one is a short, single response to a deliberate action.
+   Nothing loops, nothing moves without being asked.
+   ============================================================ */
+
+/* Fix rows open with a soft spring rather than a linear slide. */
+.fixlist li {
+  cursor: default;
+  transition: border-color 220ms ease,
+              background 220ms ease,
+              transform 420ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.fixlist li:hover {
+  border-color: var(--cream-20);
+  background: rgba(50, 44, 35, 0.45);
+  transform: translateX(3px);
+}
+.fixlist li:hover .fx__r { color: var(--ember); }
+.fixlist .fx__r { transition: color 220ms ease; }
+
+/* Plan steps lift very slightly, enough to feel live, not enough to bounce. */
+.plan li {
+  transition: border-color 220ms ease, transform 420ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.plan li:hover { border-color: var(--cream-20); transform: translateY(-3px); }
+
+/* Escalation cases answer to the pointer as a single object. */
+.case__body { transition: border-color 220ms ease; }
+.case:hover .case__body { border-color: var(--cream-20); }
+
+/* Table rows: a clear band plus a leading accent rule, so the eye can track
+   across a wide row without losing its line. */
+.table tbody tr { transition: background 140ms ease; }
+.table tbody tr td:first-child { position: relative; }
+.table tbody tr td:first-child::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 -0.5rem;
+  width: 2px;
+  background: var(--ember);
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+.table tbody tr:hover td:first-child::before { opacity: 1; }
+
+/* The waffle reacts cell by cell, so the chart rewards a close look. */
+.waffle i { transition: transform 260ms cubic-bezier(0.34, 1.4, 0.64, 1); }
+.waffle:hover i { opacity: 0.45; }
+.waffle i:hover { opacity: 1; transform: scale(1.55); }
+
+/* Keyboard users get the same affordances as pointer users. */
+a:focus-visible, button:focus-visible, input:focus-visible, th:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fixlist li:hover, .plan li:hover { transform: none; }
+  .waffle i:hover { transform: none; }
+}
+
+/* ============================================================
+   Dashboard panel — the seller quality monitor
+   ============================================================ */
+.panel {
+  margin-top: 2.25rem;
+  border: 1px solid var(--cream-20);
+  border-radius: var(--radius);
+  background: rgba(50, 44, 35, 0.22);
+  overflow: hidden;
+}
+.panel__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  padding: 1.125rem 1.25rem;
+  background: var(--cream); color: var(--ink);
+}
+.panel__title {
+  margin: 0; font-family: var(--display); font-size: 1.1875rem;
+  text-transform: uppercase; letter-spacing: 0.01em;
+}
+.panel__meta { margin: 0; font-size: 0.875rem; color: rgba(16, 11, 6, 0.72); }
+
+.panel__bar {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.875rem 1.25rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--cream-12);
+}
+.field { display: flex; flex-direction: column; gap: 0.375rem; }
+.field__l {
+  font-family: var(--display); text-transform: uppercase;
+  font-size: 0.6875rem; letter-spacing: 0.12em; color: var(--gold);
+}
+.field input[type="search"], .field select {
+  font: inherit; font-size: 0.9375rem;
+  padding: 0.5rem 0.75rem; min-width: 10rem;
+  color: var(--cream); background: rgba(16, 11, 6, 0.55);
+  border: 1px solid var(--cream-20); border-radius: var(--radius);
+}
+.field--check { flex-direction: row; align-items: center; gap: 0.5rem; font-size: 0.9375rem; color: var(--cream-70); }
+.field--check input { width: 1.0625rem; height: 1.0625rem; accent-color: var(--ember); }
+.field__reset {
+  margin-left: auto; font: inherit; font-size: 0.875rem;
+  padding: 0.5rem 0.9375rem; cursor: pointer;
+  color: var(--cream-70); background: transparent;
+  border: 1px solid var(--cream-20); border-radius: var(--radius);
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.field__reset:hover { color: var(--cream); border-color: var(--cream-55); }
+
+.panel__stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px; margin: 0; padding: 0; list-style: none;
+  background: var(--cream-12); border-bottom: 1px solid var(--cream-12);
+}
+.panel__stats li { padding: 0.9375rem 1.25rem; background: var(--ink); }
+.panel__stats b {
+  display: block; font-family: var(--display); font-size: 1.75rem; line-height: 1;
+  color: var(--cream); font-variant-numeric: tabular-nums; font-weight: 400;
+}
+.panel__stats span { display: block; margin-top: 0.375rem; font-size: 0.8125rem; color: var(--cream-70); }
+
+.panel__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cream-12); }
+.panel__cell { padding: 1.25rem; background: var(--ink); min-width: 0; }
+.panel__cell--table { padding: 1.25rem 0 0.5rem; }
+.panel__cell--table .panel__cap, .panel__cell--table .note { padding-inline: 1.25rem; }
+.panel__cap {
+  margin: 0 0 0.875rem;
+  font-family: var(--display); text-transform: uppercase;
+  font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gold);
+}
+.panel__cell--table .tablewrap { max-height: 22rem; overflow: auto; }
+
+@media (max-width: 1100px) {
+  .panel__grid { grid-template-columns: 1fr; }
+  .panel__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .panel__bar { flex-direction: column; align-items: stretch; }
+  .field__reset { margin-left: 0; }
+  .panel__stats { grid-template-columns: 1fr; }
+}

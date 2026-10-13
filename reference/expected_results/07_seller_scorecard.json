@@ -1,0 +1,196 @@
+[
+ [
+  {
+   "scored_sellers": 425,
+   "flagged_sellers": 89,
+   "flagged_seller_pct": 20.9,
+   "scored_orders": 74684,
+   "flagged_share_of_orders_pct": 21.4,
+   "flagged_share_of_late_handoffs_pct": 58.2,
+   "platform_late_handoff_pct": 8.96,
+   "median_seller_late_handoff_pct": 4.92,
+   "flagged_late_handoff_pct": 23.3
+  }
+ ],
+ [
+  {
+   "seller": "7c67e144",
+   "seller_state": "SP",
+   "orders": 980,
+   "late_handoffs": 289,
+   "late_handoff_pct": 29.5,
+   "wilson_lower_pct": 26.7,
+   "late_delivery_pct": 9.1,
+   "late_orders_with_late_handoff": 44,
+   "low_review_pct": 25.7
+  },
+  {
+   "seller": "1025f0e2",
+   "seller_state": "SP",
+   "orders": 915,
+   "late_handoffs": 162,
+   "late_handoff_pct": 17.7,
+   "wilson_lower_pct": 15.4,
+   "late_delivery_pct": 7.9,
+   "late_orders_with_late_handoff": 44,
+   "low_review_pct": 17.4
+  },
+  {
+   "seller": "1f50f920",
+   "seller_state": "SP",
+   "orders": 1404,
+   "late_handoffs": 153,
+   "late_handoff_pct": 10.9,
+   "wilson_lower_pct": 9.4,
+   "late_delivery_pct": 8.8,
+   "late_orders_with_late_handoff": 18,
+   "low_review_pct": 14.2
+  },
+  {
+   "seller": "3d871de0",
+   "seller_state": "SP",
+   "orders": 1078,
+   "late_handoffs": 140,
+   "late_handoff_pct": 13.0,
+   "wilson_lower_pct": 11.1,
+   "late_delivery_pct": 5.4,
+   "late_orders_with_late_handoff": 23,
+   "low_review_pct": 11.5
+  },
+  {
+   "seller": "06a2c3af",
+   "seller_state": "MA",
+   "orders": 392,
+   "late_handoffs": 123,
+   "late_handoff_pct": 31.4,
+   "wilson_lower_pct": 27.0,
+   "late_delivery_pct": 18.9,
+   "late_orders_with_late_handoff": 66,
+   "low_review_pct": 16.8
+  },
+  {
+   "seller": "88460e8e",
+   "seller_state": "PR",
+   "orders": 246,
+   "late_handoffs": 117,
+   "late_handoff_pct": 47.6,
+   "wilson_lower_pct": 41.4,
+   "late_delivery_pct": 17.1,
+   "late_orders_with_late_handoff": 39,
+   "low_review_pct": 31.2
+  },
+  {
+   "seller": "53e4c6e0",
+   "seller_state": "SP",
+   "orders": 469,
+   "late_handoffs": 98,
+   "late_handoff_pct": 20.9,
+   "wilson_lower_pct": 17.5,
+   "late_delivery_pct": 4.7,
+   "late_orders_with_late_handoff": 9,
+   "low_review_pct": 14.0
+  },
+  {
+   "seller": "81602554",
+   "seller_state": "SP",
+   "orders": 385,
+   "late_handoffs": 96,
+   "late_handoff_pct": 24.9,
+   "wilson_lower_pct": 20.9,
+   "late_delivery_pct": 13.5,
+   "late_orders_with_late_handoff": 26,
+   "low_review_pct": 17.3
+  },
+  {
+   "seller": "92eb0f42",
+   "seller_state": "SP",
+   "orders": 340,
+   "late_handoffs": 91,
+   "late_handoff_pct": 26.8,
+   "wilson_lower_pct": 22.3,
+   "late_delivery_pct": 4.7,
+   "late_orders_with_late_handoff": 11,
+   "low_review_pct": 15.1
+  },
+  {
+   "seller": "7d13fca1",
+   "seller_state": "SP",
+   "orders": 565,
+   "late_handoffs": 84,
+   "late_handoff_pct": 14.9,
+   "wilson_lower_pct": 12.2,
+   "late_delivery_pct": 11.3,
+   "late_orders_with_late_handoff": 23,
+   "low_review_pct": 17.5
+  },
+  {
+   "seller": "4c2b2301",
+   "seller_state": "SP",
+   "orders": 261,
+   "late_handoffs": 83,
+   "late_handoff_pct": 31.8,
+   "wilson_lower_pct": 26.4,
+   "late_delivery_pct": 9.2,
+   "late_orders_with_late_handoff": 13,
+   "low_review_pct": 18.3
+  },
+  {
+   "seller": "37515688",
+   "seller_state": "SP",
+   "orders": 228,
+   "late_handoffs": 80,
+   "late_handoff_pct": 35.1,
+   "wilson_lower_pct": 29.2,
+   "late_delivery_pct": 7.9,
+   "late_orders_with_late_handoff": 14,
+   "low_review_pct": 10.6
+  },
+  {
+   "seller": "7aa4334b",
+   "seller_state": "SP",
+   "orders": 217,
+   "late_handoffs": 78,
+   "late_handoff_pct": 35.9,
+   "wilson_lower_pct": 29.9,
+   "late_delivery_pct": 11.5,
+   "late_orders_with_late_handoff": 21,
+   "low_review_pct": 14.9
+  },
+  {
+   "seller": "b2ba3715",
+   "seller_state": "SP",
+   "orders": 327,
+   "late_handoffs": 76,
+   "late_handoff_pct": 23.2,
+   "wilson_lower_pct": 19.0,
+   "late_delivery_pct": 6.7,
+   "late_orders_with_late_handoff": 7,
+   "low_review_pct": 14.4
+  },
+  {
+   "seller": "85d9eb9d",
+   "seller_state": "MG",
+   "orders": 505,
+   "late_handoffs": 66,
+   "late_handoff_pct": 13.1,
+   "wilson_lower_pct": 10.4,
+   "late_delivery_pct": 2.2,
+   "late_orders_with_late_handoff": 8,
+   "low_review_pct": 10.5
+  }
+ ],
+ [
+  {
+   "handoff": "On-time handoff",
+   "delivered": 87505,
+   "late_delivery_pct": 5.4,
+   "low_review_pct": 11.7
+  },
+  {
+   "handoff": "Late handoff",
+   "delivered": 8581,
+   "late_delivery_pct": 21.1,
+   "low_review_pct": 23.8
+  }
+ ]
+]

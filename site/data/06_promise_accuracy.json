@@ -1,0 +1,251 @@
+[
+ [
+  {
+   "promised_days_p50": 24.2,
+   "actual_days_p50": 10.2,
+   "days_early_p50": 12.9,
+   "arrived_7plus_days_early_pct": 78.9,
+   "late_pct": 6.8
+  }
+ ],
+ [
+  {
+   "purchase_month": "2017-01-01",
+   "delivered": 750,
+   "promised_days_p50": 40.0,
+   "actual_days_p50": 10.7,
+   "late_pct": 2.9
+  },
+  {
+   "purchase_month": "2017-02-01",
+   "delivered": 1653,
+   "promised_days_p50": 31.2,
+   "actual_days_p50": 11.0,
+   "late_pct": 3.0
+  },
+  {
+   "purchase_month": "2017-03-01",
+   "delivered": 2546,
+   "promised_days_p50": 23.6,
+   "actual_days_p50": 10.1,
+   "late_pct": 4.6
+  },
+  {
+   "purchase_month": "2017-04-01",
+   "delivered": 2303,
+   "promised_days_p50": 26.5,
+   "actual_days_p50": 12.7,
+   "late_pct": 6.6
+  },
+  {
+   "purchase_month": "2017-05-01",
+   "delivered": 3545,
+   "promised_days_p50": 24.3,
+   "actual_days_p50": 9.8,
+   "late_pct": 3.0
+  },
+  {
+   "purchase_month": "2017-06-01",
+   "delivered": 3135,
+   "promised_days_p50": 24.4,
+   "actual_days_p50": 10.8,
+   "late_pct": 3.0
+  },
+  {
+   "purchase_month": "2017-07-01",
+   "delivered": 3872,
+   "promised_days_p50": 24.0,
+   "actual_days_p50": 10.2,
+   "late_pct": 2.8
+  },
+  {
+   "purchase_month": "2017-08-01",
+   "delivered": 4193,
+   "promised_days_p50": 23.6,
+   "actual_days_p50": 9.8,
+   "late_pct": 2.9
+  },
+  {
+   "purchase_month": "2017-09-01",
+   "delivered": 4150,
+   "promised_days_p50": 23.1,
+   "actual_days_p50": 10.3,
+   "late_pct": 4.4
+  },
+  {
+   "purchase_month": "2017-10-01",
+   "delivered": 4478,
+   "promised_days_p50": 23.4,
+   "actual_days_p50": 10.3,
+   "late_pct": 4.2
+  },
+  {
+   "purchase_month": "2017-11-01",
+   "delivered": 7288,
+   "promised_days_p50": 23.3,
+   "actual_days_p50": 12.7,
+   "late_pct": 12.4
+  },
+  {
+   "purchase_month": "2017-12-01",
+   "delivered": 5513,
+   "promised_days_p50": 28.4,
+   "actual_days_p50": 13.1,
+   "late_pct": 7.5
+  },
+  {
+   "purchase_month": "2018-01-01",
+   "delivered": 7069,
+   "promised_days_p50": 26.6,
+   "actual_days_p50": 11.8,
+   "late_pct": 5.7
+  },
+  {
+   "purchase_month": "2018-02-01",
+   "delivered": 6555,
+   "promised_days_p50": 25.3,
+   "actual_days_p50": 14.3,
+   "late_pct": 14.1
+  },
+  {
+   "purchase_month": "2018-03-01",
+   "delivered": 7003,
+   "promised_days_p50": 22.3,
+   "actual_days_p50": 13.4,
+   "late_pct": 19.0
+  },
+  {
+   "purchase_month": "2018-04-01",
+   "delivered": 6798,
+   "promised_days_p50": 24.4,
+   "actual_days_p50": 9.3,
+   "late_pct": 4.5
+  },
+  {
+   "purchase_month": "2018-05-01",
+   "delivered": 6749,
+   "promised_days_p50": 22.5,
+   "actual_days_p50": 9.1,
+   "late_pct": 6.6
+  },
+  {
+   "purchase_month": "2018-06-01",
+   "delivered": 6096,
+   "promised_days_p50": 28.3,
+   "actual_days_p50": 8.0,
+   "late_pct": 1.2
+  },
+  {
+   "purchase_month": "2018-07-01",
+   "delivered": 6156,
+   "promised_days_p50": 20.3,
+   "actual_days_p50": 7.5,
+   "late_pct": 3.4
+  },
+  {
+   "purchase_month": "2018-08-01",
+   "delivered": 6235,
+   "promised_days_p50": 14.5,
+   "actual_days_p50": 7.1,
+   "late_pct": 6.3
+  }
+ ],
+ [
+  {
+   "customer_state": "CE",
+   "delivered": 1273,
+   "promised_days_p50": 32.2,
+   "actual_days_p50": 18.2,
+   "days_early_p50": 13.2,
+   "late_pct": 13.8
+  },
+  {
+   "customer_state": "BA",
+   "delivered": 3253,
+   "promised_days_p50": 30.0,
+   "actual_days_p50": 16.9,
+   "days_early_p50": 12.6,
+   "late_pct": 12.2
+  },
+  {
+   "customer_state": "RJ",
+   "delivered": 12305,
+   "promised_days_p50": 25.6,
+   "actual_days_p50": 12.0,
+   "days_early_p50": 13.2,
+   "late_pct": 12.1
+  },
+  {
+   "customer_state": "ES",
+   "delivered": 1992,
+   "promised_days_p50": 26.0,
+   "actual_days_p50": 13.6,
+   "days_early_p50": 12.1,
+   "late_pct": 10.7
+  },
+  {
+   "customer_state": "PE",
+   "delivered": 1587,
+   "promised_days_p50": 32.0,
+   "actual_days_p50": 15.7,
+   "days_early_p50": 14.5,
+   "late_pct": 9.6
+  },
+  {
+   "customer_state": "SC",
+   "delivered": 3536,
+   "promised_days_p50": 26.1,
+   "actual_days_p50": 13.0,
+   "days_early_p50": 13.1,
+   "late_pct": 8.2
+  },
+  {
+   "customer_state": "GO",
+   "delivered": 1950,
+   "promised_days_p50": 27.9,
+   "actual_days_p50": 13.9,
+   "days_early_p50": 13.3,
+   "late_pct": 6.6
+  },
+  {
+   "customer_state": "RS",
+   "delivered": 5325,
+   "promised_days_p50": 29.0,
+   "actual_days_p50": 13.2,
+   "days_early_p50": 15.0,
+   "late_pct": 6.1
+  },
+  {
+   "customer_state": "DF",
+   "delivered": 2074,
+   "promised_days_p50": 25.1,
+   "actual_days_p50": 11.4,
+   "days_early_p50": 13.0,
+   "late_pct": 5.7
+  },
+  {
+   "customer_state": "MG",
+   "delivered": 11316,
+   "promised_days_p50": 24.6,
+   "actual_days_p50": 10.3,
+   "days_early_p50": 14.1,
+   "late_pct": 4.6
+  },
+  {
+   "customer_state": "SP",
+   "delivered": 40298,
+   "promised_days_p50": 19.8,
+   "actual_days_p50": 7.2,
+   "days_early_p50": 11.3,
+   "late_pct": 4.5
+  },
+  {
+   "customer_state": "PR",
+   "delivered": 4899,
+   "promised_days_p50": 25.0,
+   "actual_days_p50": 10.4,
+   "days_early_p50": 14.1,
+   "late_pct": 4.1
+  }
+ ]
+]

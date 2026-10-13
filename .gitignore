@@ -1,0 +1,27 @@
+# raw data is downloaded from Kaggle, never committed
+data/raw/*
+!data/raw/.gitkeep
+# rebuilt by scripts/load.py and scripts/run.py
+build/
+out/
+__pycache__/
+.DS_Store
+sources/originals/*
+!sources/originals/README.md
+# local design-comparison scaffold: embeds a screenshot of someone else's
+# website, so it is never committed or published
+site/_compare/
+# downloaded source photos, re-fetchable by scripts/prepare_images.py
+build/img_cache/
+
+# Screenshots of the reference website used for design study. They are
+# someone else's copyrighted pages, so they stay on this machine.
+design/inspiration/
+
+# Third-party skill, installed from its own repo. Not ours to redistribute,
+# and 3.7MB of vendored data does not belong in a portfolio repo.
+.claude/skills/ui-ux-pro-max/
+
+# macOS / editor noise
+.DS_Store
+*.swp
