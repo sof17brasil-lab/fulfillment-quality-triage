@@ -1,12 +1,28 @@
 # Image credits
 
-Every photograph on the website is released under **Creative Commons Zero (CC0 1.0)**, a public domain dedication: the photographer has waived their copyright, so the images may be used for any purpose, including commercially, with no permission or attribution required.
+The photographs fall into two groups.
+
+**The halved produce in the hero was photographed by Sofia Mota**, the author of this project, on her own phone. Copyright is hers and no third-party permission is involved.
+
+**Everything else is Creative Commons Zero (CC0 1.0)**, a public domain dedication: the photographer has waived their copyright, so the images may be used for any purpose, including commercially, with no permission or attribution required.
 
 Attribution is not required by the licence. It is given here anyway, because crediting people who give their work away is the decent thing to do, and because it lets anyone re-check the licence for themselves.
 
 Licences were read from each file's Wikimedia Commons record on 13 October 2026.
 
-## Photographs used
+## Sofia's own photographs
+
+| On the site | Subject | Photographer | Rights |
+|---|---|---|---|
+| `site/img/half-tomato.webp` | Halved tomato | Sofia Mota | Author's own work |
+| `site/img/half-lemon.webp` | Halved lemon | Sofia Mota | Author's own work |
+| `site/img/half-papaya.webp` | Halved papaya | Sofia Mota | Author's own work |
+| `site/img/half-avocado.webp` | Halved avocado | Sofia Mota | Author's own work |
+| `site/img/half-onion.webp` | Halved onion | Sofia Mota | Author's own work |
+
+Source files live in `design/*.png`. `scripts/prepare_images.py` trims each to its subject, pads it to a square so the slow hero rotation turns about the centre, resizes to 440px and writes WebP with transparency.
+
+## CC0 photographs used
 
 | On the site | Subject | Photographer | Licence | Source file | Size |
 |---|---|---|---|---|---|

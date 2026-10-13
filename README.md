@@ -63,7 +63,7 @@ site/       the static site (no server, deploys as-is to GitHub Pages)
 ## Credits
 
 Data: Olist, via Kaggle, licensed **CC BY-NC-SA 4.0**.
-Photography: six CC0 images from Wikimedia Commons, credited individually in [`design/image_credits.md`](design/image_credits.md); the halved produce is the author's own.
+Photography: the halved produce in the hero was shot by Sofia Mota. The remaining images are CC0 from Wikimedia Commons, credited individually in [`design/image_credits.md`](design/image_credits.md).
 Type: Inter Tight and Fjalla One, both SIL Open Font License.
 
 Built with AI assistance. Sofia Mota built this project with Claude, an AI assistant. Every headline number is computed twice, in SQL and again in separate Python code, and every quote is checked against its original source.

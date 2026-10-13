@@ -25,3 +25,5 @@ design/inspiration/
 # macOS / editor noise
 .DS_Store
 *.swp
+CLAUDE_CODE_PROMPT.md
+START_HERE.md
